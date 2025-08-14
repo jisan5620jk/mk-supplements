@@ -26,7 +26,7 @@
       ],
       "settings": {
         "announcement_animation_type": "only_text",
-        "bg_color": "#fbbf24",
+        "bg_color": "#d0ac52",
         "font_size": 1.5,
         "marquee_speed": 40,
         "slides_per_view_small": 1,
