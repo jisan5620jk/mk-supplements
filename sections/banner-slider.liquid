@@ -64,7 +64,9 @@
 
           <div class="customer-count">
             {% for app_block in block.blocks %}
-              {% render app_block %}
+             {% if app_block.type == '@app' %}
+                  {% render app_block %}
+                {% endif %}
             {% endfor %}
           </div>
 
@@ -128,6 +130,12 @@ document.addEventListener('DOMContentLoaded', function () {
           "id": "headline",
           "label": "Headline Text",
           "default": "Daily energy, stamina & recovery from bison organ power."
+        },
+        {
+          "type": "text",
+          "id": "customer_count",
+          "label": "Customer Count",
+          "default": "80,000+ HAPPY CUSTOMERS"
         },
         {
           "type": "url",
