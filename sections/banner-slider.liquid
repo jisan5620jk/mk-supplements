@@ -1,10 +1,10 @@
 <style>
     .banner-swiper {
         width: 100%;
-        height: 100vh;
         position: relative;
+        overflow: hidden;
     }
-    .swiper-slide {
+    .banner-slider {
         background-size: cover;
         background-position: center;
         display: flex;
@@ -12,14 +12,17 @@
         justify-content: center;
     }
     .banner-content {
-        text-align: center;
+        text-align: left;
         color: #fff;
-        max-width: 600px;
+        max-width: 1180px;
         padding: 20px;
     }
     .banner-content h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
+        font-family: 'NewKansas-Regular';
+        color: #fff;
+        font-weight: 600;
+        font-size: 72px;
+        line-height: 90px;
         margin-bottom: 20px;
     }
     .shop-now-button {
@@ -51,22 +54,26 @@
     }
 </style>
 
-<div class="swiper-container banner-swiper">
+<div class="swiper-container banner-swiper {% if section.settings.enable_boxed_section %}boxed-section{% endif %}">
   <div class="swiper-wrapper">
     {% for block in section.blocks %}
-      <div class="swiper-slide" style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');">
+      <div class="swiper-slide banner-slider" style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');">
         <div class="banner-content">
           <h1>{{ block.settings.headline }}</h1>
           <a href="{{ block.settings.shop_link }}" class="shop-now-button">SHOP NOW</a>
+
           <div class="customer-count">
-            <span class="stars">★★★★★</span>
-            <span>{{ block.settings.customer_count }}</span>
+            {% for app_block in block.blocks %}
+              {% render app_block %}
+            {% endfor %}
           </div>
+
         </div>
       </div>
     {% endfor %}
   </div>
 </div>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -87,6 +94,12 @@ document.addEventListener('DOMContentLoaded', function () {
 {
   "name": "Banner Slider",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_boxed_section",
+      "label": "Enable Boxed Section",
+      "default": true
+    },
     {
       "type": "number",
       "id": "slider_speed",
@@ -117,18 +130,15 @@ document.addEventListener('DOMContentLoaded', function () {
           "default": "Daily energy, stamina & recovery from bison organ power."
         },
         {
-          "type": "text",
-          "id": "customer_count",
-          "label": "Customer Count",
-          "default": "80,000+ HAPPY CUSTOMERS"
-        },
-        {
           "type": "url",
           "id": "shop_link",
           "label": "Shop Now Button Link",
           "default": "/collections/all"
         }
       ]
+    },
+    {
+        "type": "@app"
     }
   ],
   "presets": [
