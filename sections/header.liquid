@@ -122,7 +122,7 @@
   {% if header_tag == 'sticky-header' %}
     data-sticky-type="{{ section.settings.sticky_header_type }}"
   {% endif %}
-  class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
+  class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %} {% if section.settings.enable_boxed_section %}boxed-section{% endif %}"
 >
   {%- liquid
     assign social_links = false
@@ -472,6 +472,12 @@
   "class": "section-header",
   "max_blocks": 3,
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_boxed_section",
+      "label": "Enable Boxed Section",
+      "default": true
+    },
     {
       "type": "select",
       "id": "logo_position",
