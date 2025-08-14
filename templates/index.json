@@ -61,16 +61,14 @@
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/Vector.png",
-            "title": "Get 15% Off with Subscribe & Save!",
-            "description": "Free shipping on all U.S. orders above $100"
+            "title": "Get 15% Off with Subscribe & Save!"
           }
         },
         "feature_Yzh34R": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/Layer_1.png",
-            "title": "Get 15% Off with Subscribe & Save!",
-            "description": "Free shipping on all U.S. orders above $100"
+            "title": "Get 15% Off with Subscribe & Save!"
           }
         }
       },

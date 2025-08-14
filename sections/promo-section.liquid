@@ -2,7 +2,6 @@
 .promo-section {
   display: flex;
   align-items: center;
-  gap: 40px;
   padding: 60px 5%;
   background-size: cover;
   background-position: center;
@@ -12,21 +11,19 @@
   color: #fff;
 }
 .promo-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  line-height: 1.4;
+  font-family: 'SaaSeriesADOT', sans-serif;
+  font-weight: 400;
+  font-size: 32px;
   margin-bottom: 30px;
-  max-width: 500px;
+  color: #fff;
 }
 .features-list {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 .feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
+  max-width: 450px;
 }
 .feature-icon img {
   width: 40px;
@@ -34,8 +31,12 @@
   object-fit: contain;
 }
 .feature-text {
-  font-size: 0.9rem;
-  line-height: 1.4;
+  margin-top: 20px;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  text-transform: uppercase;
 }
 .promo-right {
   flex: 1;
@@ -43,8 +44,6 @@
   justify-content: center;
 }
 .promo-right img {
-  max-width: 100%;
-  height: auto;
 }
 @media (max-width: 768px) {
   .promo-section {
@@ -57,7 +56,7 @@
 }
 </style>
 
-<section class="promo-section" style="background-image: url('{{ section.settings.bg_image | img_url: 'master' }}');">
+<section class="promo-section {% if section.settings.enable_boxed_section %}boxed-section{% endif %}" style="background-image: url('{{ section.settings.bg_image | img_url: 'master' }}');">
   <div class="promo-left">
     <h2 class="promo-title">{{ section.settings.headline }}</h2>
     <div class="features-list">
@@ -65,12 +64,11 @@
         <div class="feature-item">
           <div class="feature-icon">
             {% if block.settings.icon %}
-              <img src="{{ block.settings.icon | img_url: 'master' }}" alt="{{ icon.alt }}">
+              <img src="{{ block.settings.icon | img_url: 'master' }}" alt="{{ block.settings.title | escape }}">
             {% endif %}
           </div>
           <div class="feature-text">
-            <strong>{{ block.settings.title }}</strong><br>
-            {{ block.settings.description }}
+            {{ block.settings.title }}
           </div>
         </div>
       {% endfor %}
@@ -79,7 +77,7 @@
 
   <div class="promo-right">
     {% if section.settings.right_image %}
-      <img src="{{ section.settings.right_image | img_url: 'master' }}" alt="{{ right_image.alt }}">
+     <img src="{{ section.settings.right_image | img_url: 'master' }}" alt="{{ section.settings.headline | escape }}">
     {% endif %}
   </div>
 </section>
@@ -88,6 +86,12 @@
 {
   "name": "Two Column Promo",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_boxed_section",
+      "label": "Enable Boxed Section",
+      "default": true
+    },
     {
       "type": "image_picker",
       "id": "bg_image",
@@ -120,12 +124,6 @@
           "id": "title",
           "label": "Feature Title",
           "default": "Get 15% Off with Subscribe & Save!"
-        },
-        {
-          "type": "text",
-          "id": "description",
-          "label": "Feature Description",
-          "default": "Free shipping on all U.S. orders above $100"
         }
       ]
     }
@@ -136,9 +134,20 @@
       "name": "Two Column Promo",
       "category": "Custom Sections",
       "blocks": [
-        { "type": "feature" },
-        { "type": "feature" }
-      ]
+            {
+                "type": "feature",
+                "settings": {
+                "title": "Get 15% Off with Subscribe & Save!"
+                }
+            },
+            {
+                "type": "feature",
+                "settings": {
+                "title": "Free shipping on all U.S. orders above $100"
+                }
+            }
+        ]
+
     }
   ]
 }
