@@ -9,12 +9,12 @@
     width: 100%;
     margin: 0 auto;
   }
-  .announcement-bar-content {
-    text-align: center;
-    color: #fff;
-    font-family: var(--announcement-font, Arial, sans-serif);
+  .announcement-bar-content p {
+    font-family: 'SaaSeriesADOT', sans-serif;
     font-weight: 400;
-    font-size: var(--announcement-font-size, 1.5rem);
+    text-align: center;
+    color: #000;
+    font-size: var(--announcement-font-size, 16px);
   }
 
   /* Marquee Animation */
@@ -38,21 +38,28 @@
     align-items: center;
     margin: 0 40px;
     white-space: normal;
-    color: #fff;
-    font-size: var(--announcement-font-size, 1.25rem);
+  }  
+  .announcement-marquee-item p{
+    font-family: 'SaaSeriesADOT', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #000;
+    font-size: var(--announcement-font-size, 16px);
   }
 
   /* Swiper Slides */
   .announcement-slider .swiper-slide {
+    font-family: 'SaaSeriesADOT', sans-serif;
+    font-weight: 400;
     text-align: center;
-    color: #fff;
-    font-size: var(--announcement-font-size, 1.25rem);
+    color: #000;
+    font-size: var(--announcement-font-size, 16px);
   }
 </style>
 
 <div
   class="announcement-bar-wrapper {% if section.settings.enable_boxed_section %}boxed-section{% endif %}"
-  style="--announcement-bg: {{ section.settings.bg_color }}; --announcement-font-size: {{ section.settings.font_size }}rem;"
+  style="--announcement-bg: {{ section.settings.bg_color }}; --announcement-font-size: {{ section.settings.font_size }}px;"
 >
   {% case section.settings.announcement_animation_type %}
     {% when 'marquee' %}
@@ -188,11 +195,11 @@
     {
       "type": "range",
       "id": "font_size",
-      "label": "Font Size (rem)",
-      "min": 0.5,
-      "max": 3,
-      "step": 0.1,
-      "default": 1.5
+      "label": "Font Size (px)",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "default": 16
     },
     {
       "type": "range",
