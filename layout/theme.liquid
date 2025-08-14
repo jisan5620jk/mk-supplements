@@ -28,6 +28,10 @@
 
     {% render 'meta-tags' %}
 
+    
+    {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
+
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
@@ -48,6 +52,21 @@
     %}
 
     {% style %}
+
+      {{ 'NewKansas-Regular' | font_face: font_display: 'swap' }}
+      {{ 'NewKansas-Bold' | font_face: font_display: 'swap' }}
+      {{ 'NewKansas-Thin' | font_face: font_display: 'swap' }}
+      {{ 'NewKansas-SemiBold' | font_face: font_display: 'swap' }}
+      {{ 'NewKansas-ExtraBold' | font_face: font_display: 'swap' }}
+
+      {{ 'HvDTrial_Americane-Regular' | font_face: font_display: 'swap' }}
+      {{ 'HvDTrial_Americane-Bold' | font_face: font_display: 'swap' }}
+      {{ 'HvDTrial_Americane-Thin' | font_face: font_display: 'swap' }}
+      {{ 'HvDTrial_Americane-SemiBold' | font_face: font_display: 'swap' }}
+      {{ 'HvDTrial_Americane-ExtraBold' | font_face: font_display: 'swap' }}
+
+      {{ 'SAASERIESADOT' | font_face: font_display: 'swap' }}
+
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
@@ -372,5 +391,8 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+
   </body>
 </html>
