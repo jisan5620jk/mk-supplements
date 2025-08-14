@@ -53,9 +53,41 @@
         "slider_speed": 1500,
         "autoplay_delay": 5000
       }
+    },
+    "promo_section_kgQgbe": {
+      "type": "promo-section",
+      "blocks": {
+        "feature_8DhPc8": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Vector.png",
+            "title": "Get 15% Off with Subscribe & Save!",
+            "description": "Free shipping on all U.S. orders above $100"
+          }
+        },
+        "feature_Yzh34R": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Layer_1.png",
+            "title": "Get 15% Off with Subscribe & Save!",
+            "description": "Free shipping on all U.S. orders above $100"
+          }
+        }
+      },
+      "block_order": [
+        "feature_8DhPc8",
+        "feature_Yzh34R"
+      ],
+      "name": "Two Column Promo",
+      "settings": {
+        "bg_image": "shopify://shop_images/Group_12717.png",
+        "headline": "Unlock peak health with our small-batch, 100% grass-fed animal supplements.",
+        "right_image": "shopify://shop_images/temp_mockups_1.png"
+      }
     }
   },
   "order": [
-    "banner_slider_xNpLCB"
+    "banner_slider_xNpLCB",
+    "promo_section_kgQgbe"
   ]
 }
