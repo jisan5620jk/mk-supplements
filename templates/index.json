@@ -17,7 +17,6 @@
           "settings": {
             "background_image": "shopify://shop_images/Hero_img_1.jpg",
             "headline": "Daily energy, stamina & recovery from bison organ power.",
-            "customer_count": "80,000+ HAPPY CUSTOMERS",
             "shop_link": "shopify://collections/all"
           }
         },
@@ -26,7 +25,6 @@
           "settings": {
             "background_image": "shopify://shop_images/Hero_img.jpg",
             "headline": "Daily energy, stamina & recovery from bison organ power.",
-            "customer_count": "80,000+ HAPPY CUSTOMERS",
             "shop_link": "shopify://collections/all"
           }
         },
@@ -35,18 +33,23 @@
           "settings": {
             "background_image": "shopify://shop_images/Hero_img_2.jpg",
             "headline": "Daily energy, stamina & recovery from bison organ power.",
-            "customer_count": "80,000+ HAPPY CUSTOMERS",
             "shop_link": "shopify://collections/all"
           }
+        },
+        "judge_me_reviews_medals_dJmXMf": {
+          "type": "shopify://apps/judge-me-reviews/blocks/medals/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
         "slide_J3gjVB",
         "slide_yzjb6a",
-        "slide_ygHXGx"
+        "slide_ygHXGx",
+        "judge_me_reviews_medals_dJmXMf"
       ],
       "name": "Banner Slider",
       "settings": {
+        "enable_boxed_section": true,
         "slider_speed": 1500,
         "autoplay_delay": 5000
       }
