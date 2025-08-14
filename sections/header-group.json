@@ -25,9 +25,10 @@
         "announcement-bar-0"
       ],
       "settings": {
+        "enable_boxed_section": true,
         "announcement_animation_type": "only_text",
         "bg_color": "#d0ac52",
-        "font_size": 1.5,
+        "font_size": 16,
         "marquee_speed": 40,
         "slides_per_view_small": 1,
         "slides_per_view_medium": 1,
