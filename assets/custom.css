@@ -122,7 +122,6 @@
   font-display: swap;
 }
 
-
 p {
   margin: 0px;
 }
@@ -139,6 +138,7 @@ p {
   font-family: 'SAASERIESFDOT';
   font-weight: 400;
   font-size: 20px;
+  padding: 6px 30px;
   text-align: center;
   transition: background .2s ease, color .2s ease, transform .05s ease;
 }
