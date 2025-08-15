@@ -134,6 +134,7 @@
       ],
       "name": "Products Slider",
       "settings": {
+        "enable_boxed_section": true,
         "heading": "Our pure & potent animal supplements",
         "subheading": "Modern farming has depleted soil quality, leaving most people deficient in essential micronutrients. Our animal-based supplements provide highly bioavailable vitamins, minerals, coenzymes, and peptides for optimal health and vitality.",
         "source": "manual",
@@ -169,11 +170,57 @@
         "padding_top": 40,
         "padding_bottom": 48
       }
+    },
+    "unique_supplements_FYDKCc": {
+      "type": "unique-supplements",
+      "blocks": {
+        "feature_PerwUW": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/hands.png",
+            "label": "FAMILY OWNED"
+          }
+        },
+        "feature_BwHr8h": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Layer_1_1.png",
+            "label": "SMALL BATCH"
+          }
+        },
+        "feature_rz6i6x": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Layer_1_2.png",
+            "label": "NON-GMO"
+          }
+        },
+        "feature_TK78Kj": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Layer_1_3.png",
+            "label": "FREE FROM TOXINS & MICROPLASTICS"
+          }
+        }
+      },
+      "block_order": [
+        "feature_PerwUW",
+        "feature_BwHr8h",
+        "feature_rz6i6x",
+        "feature_TK78Kj"
+      ],
+      "name": "Unique Supplements Video",
+      "settings": {
+        "section_title": "Unlock Peak Health",
+        "poster_image": "shopify://shop_images/video-thumbnail_1.jpg",
+        "video_url": ""
+      }
     }
   },
   "order": [
     "banner_slider_xNpLCB",
     "promo_section_kgQgbe",
-    "products_section_idhCmp"
+    "products_section_idhCmp",
+    "unique_supplements_FYDKCc"
   ]
 }
