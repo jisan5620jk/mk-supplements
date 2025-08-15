@@ -47,11 +47,12 @@
     max-width: 900px;
     margin: 0 auto;
     color: #fff;
-    opacity: 0.95;
-    font-size: clamp(12px, 1.6vw, 14px);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    line-height: 1.6;
+    font-family: 'SAASERIESFDOT';
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+
   }
 
   /* Swiper base & fallback if JS fails */
@@ -87,15 +88,6 @@
   #{{ section_id }} .service-card__body {
     padding: clamp(16px, 2.8vw, 28px);
   }
-  #{{ section_id }} .service-card__eyebrow {
-    display: block;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 800;
-    color: var(--accent);
-    margin-bottom: 8px;
-  }
   #{{ section_id }} .service-card__title {
     font-size: clamp(16px, 2vw, 20px);
     letter-spacing: 0.08em;
@@ -107,23 +99,6 @@
     color: var(--muted);
     font-size: 16px;
     line-height: 1.7;
-  }
-  #{{ section_id }} .service-card__link {
-    margin-top: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  #{{ section_id }} .service-card__link svg {
-    width: 16px; height: 16px;
-    transform: translateX(0);
-    transition: transform .2s ease;
-  }
-  #{{ section_id }} .service-card__link:hover svg {
-    transform: translateX(2px);
   }
 
   /* Nav buttons */
