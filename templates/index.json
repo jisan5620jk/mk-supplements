@@ -238,7 +238,6 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Mask_group.png",
-            "image_alt": "",
             "title": "Family-owned",
             "text": "<p>Behind MK Supplements is a family of four, passionate about homestead living, reconnecting with nature and teaching our kids that food doesn't come from the store.</p>"
           }
@@ -247,16 +246,14 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Mask_group_1.png",
-            "image_alt": "",
             "title": "Healthy living",
-            "text": "<p>Follow our co-founder's &lt;a href=\"https://michaelkummer.com/\"&gt;healthy living blog&lt;/a&gt; to learn more about how to optimize nutrition, exercise and sleep to avoid chronic diseases.</p>"
+            "text": "<p>Follow our co-founder's healthy living blog to learn more about how to optimize nutrition, exercise and sleep to avoid chronic diseases.</p>"
           }
         },
         "card_jr99rV": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Mask_group_2.png",
-            "image_alt": "",
             "title": "small batch",
             "text": "<p>All of our products are made with love in small batches.  We take pride in carefully sourcing all ingredients and selecting every piece of packaging to ensure they meet our high quality standards.</p>"
           }
