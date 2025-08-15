@@ -79,25 +79,25 @@
         <a href="{{ collection.url }}" class="supplements-collection-card">
           {%- comment -%} ছবি ঠিক করার লজিক {%- endcomment -%}
           {% capture img_html %}
-        {% if collection.image %}
-          <img
-            src="{{ collection.image | image_url: 'master' }}"
-            alt="{{ collection.title | escape }}"
-            loading="lazy"
-          >
-        {% else %}
-          {% assign first_product = collection.products | first %}
-          {% if first_product and first_product.featured_image %}
+            {% if collection.image %}
             <img
-              src="{{ first_product.featured_image | image_url: 'master' }}"
-              alt="{{ first_product.title | escape }}"
-              loading="lazy"
+                src="{{ collection.image | image_url: 'master' }}"
+                alt="{{ collection.title | escape }}"
+                loading="lazy"
             >
-          {% else %}
-            {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
-          {% endif %}
-        {% endif %}
-      {% endcapture %}
+            {% else %}
+            {% assign first_product = collection.products | first %}
+            {% if first_product and first_product.featured_image %}
+                <img
+                src="{{ first_product.featured_image | image_url: 'master' }}"
+                alt="{{ first_product.title | escape }}"
+                loading="lazy"
+                >
+            {% else %}
+                {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
+            {% endif %}
+            {% endif %}
+        {% endcapture %}
 
           {{ img_html }}
           <h3>{{ collection.title }}</h3>
