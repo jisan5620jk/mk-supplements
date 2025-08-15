@@ -1,151 +1,17 @@
-{% schema %}
-{
-  "name": "Unique Supplements Video",
-  "tag": "section",
-  "class": "unique-supplements-video",
-  "settings": [
-    {
-      "type": "text",
-      "id": "section_title",
-      "label": "Section Title",
-      "default": "Unlock Peak Health"
-    },
-    {
-      "type": "image_picker",
-      "id": "poster_image",
-      "label": "Video Poster"
-    },
-    {
-      "type": "url",
-      "id": "video_url",
-      "label": "Video URL"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "feature",
-      "name": "Feature Card",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon",
-          "label": "Feature Icon"
-        },
-        {
-          "type": "text",
-          "id": "label",
-          "label": "Feature Label",
-          "default": "Feature Title"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Unique Supplements Video",
-      "category": "Custom",
-      "blocks": [
-        { "type": "feature", "settings": { "label": "FAMILY OWNED" } },
-        { "type": "feature", "settings": { "label": "SMALL BATCH" } },
-        { "type": "feature", "settings": { "label": "NON-GMO" } },
-        { "type": "feature", "settings": { "label": "FREE FROM TOXINS & MICROPLASTICS" } }
-      ]
-    }
-  ]
-}
-{% endschema %}
-
-<div class="unique-supplements-video">
-  {% if section.settings.section_title %}
-    <h2 class="section-title">{{ section.settings.section_title }}</h2>
-  {% endif %}
-
-  <div class="video-wrapper">
-    {% if section.settings.poster_image %}
-      <img
-        src="{{ section.settings.poster_image | image_url: width: 1600 }}"
-        alt="Video Poster"
-        class="video-poster"
-        id="videoPoster-{{ section.id }}"
-      >
-    {% endif %}
-
-    <div class="play-button" id="playButton-{{ section.id }}"></div>
-
-    {% if section.settings.video_url %}
-      <video id="video-{{ section.id }}" controls>
-        <source src="{{ section.settings.video_url }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    {% endif %}
-  </div>
-
-  <div class="swiper feature-slider">
-    <div class="swiper-wrapper">
-      {% for block in section.blocks %}
-        <div class="swiper-slide">
-          <div class="unique-supplements-feature-card">
-            <div class="unique-supplements-feature-card-img">
-              {% if block.settings.icon %}
-                <img src="{{ block.settings.icon | image_url: width: 64 }}" alt="{{ block.settings.label }}">
-              {% endif %}
-            </div>
-            <div class="unique-supplements-feature-card-content">
-              <h4>{{ block.settings.label }}</h4>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const id = '{{ section.id }}';
-    const poster = document.getElementById('videoPoster-' + id);
-    const playBtn = document.getElementById('playButton-' + id);
-    const video = document.getElementById('video-' + id);
-
-    function playVideo() {
-      if (poster) poster.style.display = 'none';
-      if (playBtn) playBtn.style.display = 'none';
-      if (video) {
-        video.style.display = 'block';
-        video.play();
-      }
-    }
-
-    if (poster) poster.addEventListener('click', playVideo);
-    if (playBtn) playBtn.addEventListener('click', playVideo);
-
-    new Swiper('.feature-slider', {
-      slidesPerView: 2,
-      spaceBetween: 20,
-      loop: true,
-      autoplay: { delay: 3000 },
-      breakpoints: {
-        768: { slidesPerView: 3 },
-        1024: { slidesPerView: 4 },
-      },
-    });
-  });
-</script>
-
 <style>
-  .unique-supplements-video {
+  .unique-supplements {
     text-align: center;
     padding: 40px 20px;
   }
 
-  .unique-supplements-video .section-title {
+  .unique-supplements .section-title {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 24px;
     color: #222;
   }
 
-  .unique-supplements-video .video-wrapper {
+  .unique-supplements .video-wrapper {
     position: relative;
     width: 100%;
     max-width: 800px;
@@ -156,7 +22,7 @@
     border-radius: 12px;
   }
 
-  .unique-supplements-video .video-poster {
+  .unique-supplements .video-poster {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -164,7 +30,7 @@
     cursor: pointer;
   }
 
-  .unique-supplements-video .play-button {
+  .unique-supplements .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -180,11 +46,11 @@
     transition: background 0.3s ease;
   }
 
-  .unique-supplements-video .play-button:hover {
+  .unique-supplements .play-button:hover {
     background: rgba(255, 255, 255, 1);
   }
 
-  .unique-supplements-video .play-button::before {
+  .unique-supplements .play-button::before {
     content: '';
     display: block;
     width: 0;
@@ -194,7 +60,7 @@
     border-bottom: 12px solid transparent;
   }
 
-  .unique-supplements-video video {
+  .unique-supplements video {
     width: 100%;
     height: 100%;
     display: none;
@@ -234,3 +100,223 @@
     margin: 0;
   }
 </style>
+
+{%- liquid
+  assign section_id = section.id
+-%}
+
+<section
+  id="supplements-{{ section_id }}"
+  class="unique-supplements"
+>
+  {% if section.settings.section_title %}
+    <h2 class="section-title">{{ section.settings.section_title }}</h2>
+  {% endif %}
+
+  <div class="video-wrapper">
+    {% if section.settings.poster_image %}
+      <img
+        src="{{ section.settings.poster_image | image_url: width: 1600 }}"
+        alt="Video Poster"
+        class="video-poster"
+        id="videoPoster-{{ section.id }}"
+      >
+    {% endif %}
+
+    <div class="play-button" id="playButton-{{ section.id }}"></div>
+
+    {% if section.settings.video_url %}
+      <video id="video-{{ section.id }}" controls>
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% endif %}
+  </div>
+
+  <div class="swiper feature-slider">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          <div class="unique-supplements-feature-card">
+            <div class="unique-supplements-feature-card-img">
+              {% if block.settings.icon %}
+                <img src="{{ block.settings.icon | image_url: 'master' }}" alt="{{ block.settings.label }}">
+              {% endif %}
+            </div>
+            <div class="unique-supplements-feature-card-content">
+              <h4>{{ block.settings.label }}</h4>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const id = '{{ section.id }}';
+    const poster = document.getElementById('videoPoster-' + id);
+    const playBtn = document.getElementById('playButton-' + id);
+    const video = document.getElementById('video-' + id);
+
+    function playVideo() {
+      if (poster) poster.style.display = 'none';
+      if (playBtn) playBtn.style.display = 'none';
+      if (video) {
+        video.style.display = 'block';
+        video.play();
+      }
+    }
+
+    if (poster) poster.addEventListener('click', playVideo);
+    if (playBtn) playBtn.addEventListener('click', playVideo);
+
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.feature-slider', {
+        loop: true,
+        slidesPerView: {{ section.settings.slides_per_view | default: 4 }},
+        spaceBetween: {{ section.settings.space_between | default: 20 }},
+        grabCursor: true,
+        autoplay: {
+          delay: {{ section.settings.autoplay_delay | default: 3000 }},
+          disableOnInteraction: false,
+        },
+        speed: {{ section.settings.speed | default: 1000 }},
+        breakpoints: {
+          320: {  slidesPerView: {{ section.settings.slides_per_view_small | default: 1 }} },
+          640: { slidesPerView: {{ section.settings.slides_per_view_medium | default: 2 }} },
+          1024: { slidesPerView: {{ section.settings.slides_per_view_large | default: 4 }} }
+        }
+      });
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Unique Supplements Video",
+  "tag": "section",
+  "class": "unique-supplements",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Unlock Peak Health"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Video Poster"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    { "type": "header", "content": "Slider settings" },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "Slides per view (desktop ≥ 990px)"
+    },
+    {
+      "type": "range",
+      "id": "slides_tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2,
+      "label": "Slides per view (tablet ≥ 750px)"
+    },
+    {
+      "type": "range",
+      "id": "slides_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1,
+      "label": "Slides per view (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "space_between",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 24,
+      "label": "Space between slides (desktop px)"
+    },
+    {
+      "type": "range",
+      "id": "space_between_tablet",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 20,
+      "label": "Space between slides (tablet px)"
+    },
+    {
+      "type": "range",
+      "id": "space_between_mobile",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 12,
+      "label": "Space between slides (mobile px)"
+    },
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay", "default": true },
+    {
+      "type": "number",
+      "id": "autoplay_delay",
+      "default": 4000,
+      "label": "Autoplay delay (ms)"
+    },
+    {
+      "type": "number",
+      "id": "speed",
+      "default": 600,
+      "label": "Transition speed (ms)"
+    },
+    { "type": "checkbox", "id": "pause_on_hover", "label": "Pause on hover", "default": false },
+    { "type": "checkbox", "id": "loop", "label": "Loop slides", "default": true },
+    { "type": "checkbox", "id": "grab_cursor", "label": "Grab cursor", "default": true },
+    { "type": "checkbox", "id": "show_navigation", "label": "Show arrows", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Feature Icon"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Feature Label",
+          "default": "Feature Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Unique Supplements Video",
+      "category": "Custom",
+      "blocks": [
+        { "type": "feature", "settings": { "label": "FAMILY OWNED" } },
+        { "type": "feature", "settings": { "label": "SMALL BATCH" } },
+        { "type": "feature", "settings": { "label": "NON-GMO" } },
+        { "type": "feature", "settings": { "label": "FREE FROM TOXINS & MICROPLASTICS" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
