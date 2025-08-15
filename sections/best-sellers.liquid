@@ -6,9 +6,7 @@
   }
 
   .best-sellers__text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+    color: #E16456;
   }
 
   .best-sellers__description {
@@ -25,7 +23,7 @@
 
 <div class="best-sellers__wrapper">
   <div class="best-sellers__text">
-    <h2>{{ section.settings.heading }}</h2>
+    <h2 class="section-title">{{ section.settings.heading }}</h2>
     <div class="best-sellers__description">{{ section.settings.description }}</div>
     <a href="{{ section.settings.button_link }}" class="primary-button best-sellers__button">
       {{- section.settings.button_label -}}
