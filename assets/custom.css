@@ -2,44 +2,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
+/* ==== SAASERIES FONTS ==== */
 @import url('https://fonts.cdnfonts.com/css/saaseriesadot');
 
-/* ==== SAASERIES FONTS ==== */
-@font-face {
-  font-family: 'SaaSeriesADOT';
-  src: url('SAASERIESFDOT.ttf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'SAASERIESBDOT';
-  src: url('SAASERIESBDOT.ttf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'SAASERIESCDOT';
-  src: url('SAASERIESCDOT.ttf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'SAASERIESDDOT';
-  src: url('SAASERIESDDOT.ttf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'SAASERIESEDOT';
-  src: url('SAASERIESEDOT.ttf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'SAASERIESMDOT';
-  src: url('SAASERIESMDOT.ttf') format('opentype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'SaaSeriesADOT';
-  src: url('SAASERIESFDOT.ttf') format('opentype');
-  font-display: swap;
-}
 
 /* ==== NEW KANSAS ==== */
 @font-face {
@@ -87,37 +52,37 @@
 
 /* ==== HvDTrial_Americane ==== */
 @font-face {
-  font-family: 'HvDTrial_Americane';
+  font-family: 'HvDTrial Americane Condensed';
   src: url('HvDTrial_Americane-Regular-BF64939f86234b5.otf') format('opentype');
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: 'HvDTrial_Americane';
+  font-family: 'HvDTrial Americane Condensed';
   src: url('HvDTrial_Americane-Bold-BF64939f85824ae.otf') format('opentype');
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
-  font-family: 'HvDTrial_Americane';
+  font-family: 'HvDTrial Americane Condensed';
   src: url('HvDTrial_Americane-Black-BF64939f86040ec.otf') format('opentype');
   font-weight: 900;
   font-display: swap;
 }
 @font-face {
-  font-family: 'HvDTrial_Americane';
+  font-family: 'HvDTrial Americane Condensed';
   src: url('HvDTrial_Americane-Light-BF64939f8602842.otf') format('opentype');
   font-weight: 300;
   font-display: swap;
 }
 @font-face {
-  font-family: 'HvDTrial_Americane';
+  font-family: 'HvDTrial Americane Condensed';
   src: url('HvDTrial_Americane-Medium-BF64939f861512e.otf') format('opentype');
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
-  font-family: 'HvDTrial_Americane';
+  font-family: 'HvDTrial Americane Condensed';
   src: url('HvDTrial_Americane-Heavy-BF64939f8612027.otf') format('opentype');
   font-weight: 800;
   font-display: swap;
