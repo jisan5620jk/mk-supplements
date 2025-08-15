@@ -14,8 +14,7 @@
   }
 
   .supplements-collections-header h2 {
-    font-size: 2rem;
-    margin: 0;
+    color: #fff;
   }
 
   .supplements-collections-link {
@@ -23,6 +22,11 @@
     text-decoration: underline;
     font-weight: 600;
     font-size: 1rem;
+    font-family: 'SAASERIESFDOT';
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: underline;
   }
 
   .supplements-collection-card {
@@ -52,7 +56,7 @@
 
 <section class="supplements-collections {% if section.settings.enable_boxed_section %}boxed-section{% endif %}">
   <div class="supplements-collections-header">
-    <h2>{{ section.settings.section_title }}</h2>
+    <h2 class="section-title">{{ section.settings.section_title }}</h2>
     <a href="{{ section.settings.shop_all_link }}" class="collections-link">{{ section.settings.all_product_btn }}</a>
   </div>
   <div class="supplements-collections-grid">
