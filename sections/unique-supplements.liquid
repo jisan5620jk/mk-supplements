@@ -69,7 +69,16 @@
     justify-content: space-between;
   }
 
+  @media screen and (min-width: 1024px) {
+    .unique-feature-mobile {
+        display: none;
+    }
+  }
+
   @media screen and (max-width: 1023px) {
+    .unique-feature-desktop {
+        display: none;
+    }
     .unique-supplements-feature {
         display: inline-flex;
         animation: marquee var(--marquee-speed, 40s) linear infinite;
