@@ -25,12 +25,6 @@
     font-size: 1rem;
   }
 
-  .collections-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-  }
-
   .collection-card {
     background: #111;
     padding: 1rem;
@@ -104,6 +98,13 @@
       {% endif %}
     {% endfor %}
   </div>
+  <style>
+    .collections-grid {
+        display: grid;
+        grid-template-columns: repeat({{ section.settings.product_column }}, 1fr);
+        gap: 2rem;
+    }
+  </style>
 </section>
 
 <!-- Section: Supplements Collections -->
@@ -116,6 +117,15 @@
       "id": "enable_boxed_section",
       "label": "Enable Boxed Section",
       "default": true
+    },
+    {
+      "type": "range",
+      "id": "product_column",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "label": "Select Product Column",
+      "default": 4
     },
     {
       "type": "text",
