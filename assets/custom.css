@@ -126,6 +126,10 @@ p {
   margin: 0px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .boxed-section {
   max-width: 1440px;
   width: 100%;
