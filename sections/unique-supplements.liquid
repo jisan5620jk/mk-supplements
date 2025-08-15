@@ -136,7 +136,25 @@
     {% endif %}
   </div>
 
-  {% for row in (1..3) %}
+  <div class="unique-feature-desktop">
+    {% for row in (1..3) %}
+      <div class="unique-supplements-feature" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
+        {% for block in section.blocks %}
+          <div class="unique-supplements-feature-card">
+            <div class="unique-supplements-feature-card-icon">
+              {% if block.settings.icon %}
+                <img src="{{ block.settings.icon | img_url: 'master' }}" alt="{{ block.settings.label }}">
+              {% endif %}
+            </div>
+            <div class="unique-supplements-feature-card-content">
+              <h4>{{ block.settings.label }}</h4>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="unique-feature-mobile">
     <div class="unique-supplements-feature" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
       {% for block in section.blocks %}
         <div class="unique-supplements-feature-card">
@@ -151,7 +169,7 @@
         </div>
       {% endfor %}
     </div>
-  {% endfor %}
+  </div>
 </section>
 
 <script>
