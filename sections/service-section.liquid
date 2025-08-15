@@ -11,7 +11,6 @@
     --card-bg: {{ section.settings.card_bg | default: '#ffffff' }};
     --accent: {{ section.settings.accent | default: '#2b2b2b' }};
     --radius: {{ section.settings.corner_radius | default: 24 }}px;
-    --gap: 24px;
     --container: min(1200px, 90vw);
     --pad-y: clamp(40px, 6vw, 96px);
   }
@@ -53,9 +52,6 @@
   /* Swiper base & fallback if JS fails */
   #{{ section_id }} .swiper {
     overflow: visible; /* so arrows can sit outside */
-  }
-  #{{ section_id }} .swiper-wrapper {
-    gap: var(--gap);
   }
 
   /* Card */
