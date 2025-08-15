@@ -249,7 +249,7 @@
       "settings": {
         "left_image": "shopify://shop_images/IMG_1.jpg",
         "right_image": "shopify://shop_images/IMG_2.jpg",
-        "img_shape": "shopify://shop_images/Layer_1_4.png",
+        "image_shape": "shopify://shop_images/Layer_1_4.png",
         "title": "We care about our impact",
         "description": "That's why we go the extra mile in everything we do..."
       }
