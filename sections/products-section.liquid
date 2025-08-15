@@ -15,46 +15,44 @@
   id="supplements-{{ section_id }}"
   class="supplements isos2 {% if section.settings.enable_boxed_section %}boxed-section{% endif %}"
 >
-  <div class="container">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="title">{{ section.settings.heading }}</h2>
-    {%- endif -%}
-    {%- if section.settings.subheading != blank -%}
-      <p class="subtitle">{{ section.settings.subheading }}</p>
-    {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="title">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- if section.settings.subheading != blank -%}
+    <p class="subtitle">{{ section.settings.subheading }}</p>
+  {%- endif -%}
 
-    <div class="slider-wrap">
-      <div class="swiper product-slider-{{ section_id }}">
-        <div class="swiper-wrapper">
-          {%- if section.blocks.size > 0 -%}
-            {%- for block in section.blocks -%}
-              {%- assign product = block.settings.product -%}
-              {%- if product != blank -%}
-                {% render 'product-card', product: product, section: section, section_id: section_id, block: block %}
-              {%- endif -%}
-            {%- endfor -%}
-          {%- else -%}
-            {%- comment -%} Fallback placeholder when no products are chosen {%- endcomment -%}
-            <div class="swiper-slide">
-              <h3>Currently Have No Products</h3>
-            </div>
-          {%- endif -%}
-        </div>
+  <div class="slider-wrap">
+    <div class="swiper product-slider-{{ section_id }}">
+      <div class="swiper-wrapper">
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- assign product = block.settings.product -%}
+            {%- if product != blank -%}
+              {% render 'product-card', product: product, section: section, section_id: section_id, block: block %}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- comment -%} Fallback placeholder when no products are chosen {%- endcomment -%}
+          <div class="swiper-slide">
+            <h3>Currently Have No Products</h3>
+          </div>
+        {%- endif -%}
       </div>
-
-      {%- if section.settings.show_navigation -%}
-        <button class="nav prev" aria-label="Previous slide" id="prev-{{ section_id }}">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-            <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <button class="nav next" aria-label="Next slide" id="next-{{ section_id }}">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      {%- endif -%}
     </div>
+
+    {%- if section.settings.show_navigation -%}
+      <button class="nav prev" aria-label="Previous slide" id="prev-{{ section_id }}">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="nav next" aria-label="Next slide" id="next-{{ section_id }}">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    {%- endif -%}
   </div>
 
   <style>
@@ -78,10 +76,6 @@
       padding: var(--pad-t) 16px var(--pad-b);
       color: var(--text-color);
       background: {{ section.settings.section_bg }};
-    }
-    #supplements-{{ section_id }} .container{
-      max-width: var(--container-max);
-      margin: 0 auto;
     }
     #supplements-{{ section_id }} .subtitle{
       max-width: 900px;
