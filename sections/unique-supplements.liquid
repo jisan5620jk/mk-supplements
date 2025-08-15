@@ -106,7 +106,7 @@
 
 <section
   id="supplements-{{ section_id }}"
-  class="unique-supplements"
+  class="unique-supplements {% if section.settings.enable_boxed_section %}boxed-section{% endif %}"
 >
   {% if section.settings.section_title %}
     <h2 class="section-title">{{ section.settings.section_title }}</h2>
@@ -197,6 +197,12 @@
   "tag": "section",
   "class": "unique-supplements",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_boxed_section",
+      "label": "Enable Boxed Section",
+      "default": true
+    },
     {
       "type": "text",
       "id": "section_title",
