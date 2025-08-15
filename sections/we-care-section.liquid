@@ -1,0 +1,95 @@
+<style>
+  .we-care-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .we-care-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .we-care-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .we-care-content {
+    max-width: 800px;
+  }
+
+  .we-care-title {
+    font-size: clamp(1.8rem, 2vw, 2.4rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .we-care-description {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.6;
+    color: #333;
+  }
+</style>
+
+<div class="we-care-section {% if section.settings.enable_boxed_section %}boxed-section{% endif %}">
+  <div class="we-care-images">
+    <img src="{{ section.settings.left_image | img_url: 'master' }}" alt="We Care Left Image" class="we-care-img">
+    <img src="{{ section.settings.image_right | img_url: 'master' }}" alt="We Care Right Image" class="we-care-img">
+    <img
+      src="{{ section.settings.image_shape | img_url: 'master' }}"
+      alt="We Care Right Image"
+      class="we-care-img-shape"
+    >
+  </div>
+  <div class="we-care-content">
+    <h2 class="we-care-title">{{ section.settings.title }}</h2>
+    <p class="we-care-description">{{ section.settings.description }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "We Care Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "Center Circular Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "We care about our impact"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "That's why we go the extra mile in everything we do..."
+    }
+  ],
+  "presets": [
+    {
+      "name": "We Care Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
