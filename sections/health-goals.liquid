@@ -1,0 +1,118 @@
+<style>
+      .collections-section {
+    background: #000;
+    color: #fff;
+    padding: 4rem 2rem;
+    font-family: system-ui, sans-serif;
+  }
+
+  .collections-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .collections-header h2 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .collections-link {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+
+  .collection-card {
+    background: #111;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+
+  .collection-card img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+  }
+
+  .collection-card:hover {
+    transform: scale(1.03);
+  }
+
+  .collection-card h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0;
+  }
+
+  .collection-placeholder {
+    background: #333;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #aaa;
+  }
+</style>
+
+<section class="collections-section">
+  <div class="collections-header">
+    <h2>{{ section.settings.section_title }}</h2>
+    <a href="{{ section.settings.shop_all_link }}" class="collections-link">Shop All</a>
+  </div>
+  <div class="collections-grid">
+    {% for collection in collections %}
+      {% if collection.handle != 'all' %}
+        <a href="{{ collection.url }}" class="collection-card">
+          {% if collection.image %}
+            <img src="{{ collection.image | img_url: '600x' }}" alt="{{ collection.title }}">
+          {% else %}
+            <div class="collection-placeholder">No Image</div>
+          {% endif %}
+          <h3>{{ collection.title }}</h3>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Section: All Collections Grid -->
+{% schema %}
+{
+  "name": "All Collections Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Shop by Health Goals"
+    },
+    {
+      "type": "url",
+      "id": "shop_all_link",
+      "label": "Shop All Link",
+      "default": "/collections"
+    }
+  ],
+  "presets": [
+    {
+      "name": "All Collections",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
