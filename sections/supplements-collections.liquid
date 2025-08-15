@@ -60,26 +60,31 @@
     <a href="{{ section.settings.shop_all_link }}" class="collections-link">{{ section.settings.all_product_btn }}</a>
   </div>
   <div class="supplements-collections-grid">
+    {% assign title_colors = 'red,blue,green,orange,purple' | split: ',' %}
+
     {% for collection in collections %}
       {% if collection.handle != 'all' %}
+        {% assign color_index = forloop.index0 | modulo: title_colors.size %}
+        {% assign current_color = title_colors[color_index] %}
+
         <a href="{{ collection.url }}" class="supplements-collection-card">
           {% capture img_html %}
             {% if collection.image %}
-            <img
+              <img
                 src="{{ collection.image | img_url: 'master' }}"
                 alt="{{ collection.title | escape }}"
                 loading="lazy"
-            >
+              >
             {% else %}
               {% assign first_product = collection.products | first %}
               {% if first_product and first_product.featured_image %}
-                  <img
+                <img
                   src="{{ first_product.featured_image | img_url: 'master' }}"
                   alt="{{ first_product.title | escape }}"
                   loading="lazy"
-                  >
+                >
               {% else %}
-                  {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
+                {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
               {% endif %}
             {% endif %}
           {% endcapture %}
@@ -87,7 +92,7 @@
           <div class="supplements-collection-image">
             {{ img_html }}
           </div>
-          <h3 style="color: {{ section.settings.title_color }}">{{ collection.title }}</h3>
+          <h3 style="color: {{ current_color }}">{{ collection.title }}</h3>
         </a>
       {% endif %}
     {% endfor %}
