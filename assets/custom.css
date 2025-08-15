@@ -6,37 +6,37 @@
 /* ==== SAASERIES FONTS ==== */
 @font-face {
   font-family: 'SAASERIESFDOT';
-  src: url('SAASERIESFDOT.ttf') format('truetype');
+  src: url('SAASERIESFDOT.ttf') format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'SAASERIESBDOT';
-  src: url('SAASERIESBDOT.ttf') format('truetype');
+  src: url('SAASERIESBDOT.ttf') format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'SAASERIESCDOT';
-  src: url('SAASERIESCDOT.ttf') format('truetype');
+  src: url('SAASERIESCDOT.ttf') format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'SAASERIESDDOT';
-  src: url('SAASERIESDDOT.ttf') format('truetype');
+  src: url('SAASERIESDDOT.ttf') format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'SAASERIESEDOT';
-  src: url('SAASERIESEDOT.ttf') format('truetype');
+  src: url('SAASERIESEDOT.ttf') format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'SAASERIESMDOT';
-  src: url('SAASERIESMDOT.ttf') format('truetype');
+  src: url('SAASERIESMDOT.ttf') format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'SAASERIESFDOT';
-  src: url('SAASERIESFDOT.ttf') format('truetype');
+  src: url('SAASERIESFDOT.ttf') format('opentype');
   font-display: swap;
 }
 
