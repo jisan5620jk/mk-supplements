@@ -83,10 +83,100 @@
         "headline": "Unlock peak health with our small-batch, 100% grass-fed animal supplements.",
         "right_image": "shopify://shop_images/temp_mockups_1.png"
       }
+    },
+    "products_section_idhCmp": {
+      "type": "products-section",
+      "blocks": {
+        "product_CbGeeW": {
+          "type": "product",
+          "settings": {
+            "product": "denim-short"
+          }
+        },
+        "product_8ztT4q": {
+          "type": "product",
+          "settings": {
+            "product": "long-dress-1"
+          }
+        },
+        "product_FxNmWU": {
+          "type": "product",
+          "settings": {
+            "product": "long-dress-caro-line-4"
+          }
+        },
+        "product_ixBGQi": {
+          "type": "product",
+          "settings": {
+            "product": "leather-small-backpack"
+          }
+        },
+        "product_LMe88B": {
+          "type": "product",
+          "settings": {
+            "product": "leather-small-backpack"
+          }
+        },
+        "product_aCFqGJ": {
+          "type": "product",
+          "settings": {
+            "product": "green-flower-shirt"
+          }
+        }
+      },
+      "block_order": [
+        "product_CbGeeW",
+        "product_8ztT4q",
+        "product_FxNmWU",
+        "product_ixBGQi",
+        "product_LMe88B",
+        "product_aCFqGJ"
+      ],
+      "name": "Products Slider",
+      "settings": {
+        "heading": "Our pure & potent animal supplements",
+        "subheading": "Modern farming has depleted soil quality, leaving most people deficient in essential micronutrients. Our animal-based supplements provide highly bioavailable vitamins, minerals, coenzymes, and peptides for optimal health and vitality.",
+        "source": "manual",
+        "collection": "best-selling",
+        "max_products": 12,
+        "load_swiper_assets": true,
+        "slides_desktop": 4,
+        "slides_tablet": 2,
+        "slides_mobile": 1,
+        "space_between": 24,
+        "space_between_tablet": 20,
+        "space_between_mobile": 12,
+        "autoplay": true,
+        "autoplay_delay": 4000,
+        "speed": 600,
+        "pause_on_hover": true,
+        "loop": true,
+        "grab_cursor": true,
+        "centered": false,
+        "show_navigation": true,
+        "show_pagination": false,
+        "button_text": "Shop now",
+        "image_ratio": "1 / 1",
+        "title_color": "#3c2415",
+        "text_color": "#2b2b2b",
+        "star_color": "#f59f00",
+        "nav_color": "#3c2415",
+        "button_bg": "#e86452",
+        "button_color": "#ffffff",
+        "button_bg_hover": "#c94c3a",
+        "button_color_hover": "#ffffff",
+        "card_bg": "#fff7f4",
+        "card_border": "#f0e3dd",
+        "section_bg": "#ffffff",
+        "container_max": 1200,
+        "padding_top": 40,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "banner_slider_xNpLCB",
-    "promo_section_kgQgbe"
+    "promo_section_kgQgbe",
+    "products_section_idhCmp"
   ]
 }
