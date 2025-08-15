@@ -26,7 +26,7 @@
   }
 </style>
 
-<div class="best-sellers__wrapper">
+<div class="best-sellers__wrapper {% if section.settings.enable_boxed_section %}boxed-section{% endif %}">
   <div class="best-sellers__text">
     <h2 class="section-title">{{ section.settings.heading }}</h2>
     <div class="best-sellers__description">{{ section.settings.description }}</div>
@@ -46,6 +46,12 @@
   "tag": "section",
   "class": "best-sellers",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_boxed_section",
+      "label": "Enable Boxed Section",
+      "default": true
+    },
     {
       "type": "text",
       "id": "heading",
