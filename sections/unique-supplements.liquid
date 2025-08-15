@@ -63,8 +63,10 @@
     border-radius: 12px;
   }
 
-  .feature-slider {
+  .unique-supplements-feature {
     padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
   }
 
   .unique-supplements-feature-card {
@@ -120,23 +122,19 @@
     {% endif %}
   </div>
 
-  <div class="swiper feature-slider">
-    <div class="swiper-wrapper">
-      {% for block in section.blocks %}
-        <div class="swiper-slide">
-          <div class="unique-supplements-feature-card">
-            <div class="unique-supplements-feature-card-icon">
-              {% if block.settings.icon %}
-                <img src="{{ block.settings.icon | img_url: 'master' }}" alt="{{ block.settings.label }}">
-              {% endif %}
-            </div>
-            <div class="unique-supplements-feature-card-content">
-              <h4>{{ block.settings.label }}</h4>
-            </div>
-          </div>
+  <div class="unique-supplements-feature">
+    {% for block in section.blocks %}
+      <div class="unique-supplements-feature-card">
+        <div class="unique-supplements-feature-card-icon">
+          {% if block.settings.icon %}
+            <img src="{{ block.settings.icon | img_url: 'master' }}" alt="{{ block.settings.label }}">
+          {% endif %}
         </div>
-      {% endfor %}
-    </div>
+        <div class="unique-supplements-feature-card-content">
+          <h4>{{ block.settings.label }}</h4>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 </section>
 
@@ -158,25 +156,6 @@
 
     if (poster) poster.addEventListener('click', playVideo);
     if (playBtn) playBtn.addEventListener('click', playVideo);
-
-    if (typeof Swiper !== 'undefined') {
-      new Swiper('.feature-slider', {
-        loop: true,
-        slidesPerView: {{ section.settings.slides_per_view | default: 4 }},
-        spaceBetween: {{ section.settings.space_between | default: 20 }},
-        grabCursor: true,
-        autoplay: {
-          delay: {{ section.settings.autoplay_delay | default: 3000 }},
-          disableOnInteraction: false,
-        },
-        speed: {{ section.settings.speed | default: 1000 }},
-        breakpoints: {
-          320: {  slidesPerView: {{ section.settings.slides_per_view_small | default: 1 }} },
-          640: { slidesPerView: {{ section.settings.slides_per_view_medium | default: 2 }} },
-          1024: { slidesPerView: {{ section.settings.slides_per_view_large | default: 4 }} }
-        }
-      });
-    }
   });
 </script>
 {% schema %}
@@ -206,79 +185,7 @@
       "type": "url",
       "id": "video_url",
       "label": "Video URL"
-    },
-    { "type": "header", "content": "Slider settings" },
-    {
-      "type": "range",
-      "id": "slides_desktop",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 4,
-      "label": "Slides per view (desktop ≥ 990px)"
-    },
-    {
-      "type": "range",
-      "id": "slides_tablet",
-      "min": 1,
-      "max": 4,
-      "step": 1,
-      "default": 2,
-      "label": "Slides per view (tablet ≥ 750px)"
-    },
-    {
-      "type": "range",
-      "id": "slides_mobile",
-      "min": 1,
-      "max": 3,
-      "step": 1,
-      "default": 1,
-      "label": "Slides per view (mobile)"
-    },
-    {
-      "type": "range",
-      "id": "space_between",
-      "min": 0,
-      "max": 48,
-      "step": 2,
-      "default": 24,
-      "label": "Space between slides (desktop px)"
-    },
-    {
-      "type": "range",
-      "id": "space_between_tablet",
-      "min": 0,
-      "max": 48,
-      "step": 2,
-      "default": 20,
-      "label": "Space between slides (tablet px)"
-    },
-    {
-      "type": "range",
-      "id": "space_between_mobile",
-      "min": 0,
-      "max": 48,
-      "step": 2,
-      "default": 12,
-      "label": "Space between slides (mobile px)"
-    },
-    { "type": "checkbox", "id": "autoplay", "label": "Autoplay", "default": true },
-    {
-      "type": "number",
-      "id": "autoplay_delay",
-      "default": 4000,
-      "label": "Autoplay delay (ms)"
-    },
-    {
-      "type": "number",
-      "id": "speed",
-      "default": 600,
-      "label": "Transition speed (ms)"
-    },
-    { "type": "checkbox", "id": "pause_on_hover", "label": "Pause on hover", "default": false },
-    { "type": "checkbox", "id": "loop", "label": "Loop slides", "default": true },
-    { "type": "checkbox", "id": "grab_cursor", "label": "Grab cursor", "default": true },
-    { "type": "checkbox", "id": "show_navigation", "label": "Show arrows", "default": true }
+    }
   ],
   "blocks": [
     {
