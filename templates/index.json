@@ -230,6 +230,17 @@
         "video_url": "",
         "marquee_speed": 40
       }
+    },
+    "best_sellers_GUh4Mn": {
+      "type": "best-sellers",
+      "name": "Best Sellers",
+      "settings": {
+        "heading": "Shop Best Sellers",
+        "description": "<p>Modern farming has depleted soil quality, leaving most Americans deficient in essential micronutrients. Our animal-based supplements provide highly-bioavailable vitamins, minerals, coenzymes, and peptides for optimal health and vitality.<br/><br/></p>",
+        "button_link": "",
+        "button_label": "Shop Now",
+        "best_seller_image": "shopify://shop_images/Supplements_1.png"
+      }
     }
   },
   "order": [
@@ -237,6 +248,7 @@
     "promo_section_kgQgbe",
     "products_section_idhCmp",
     "supplements_collections_PhUTcY",
-    "unique_supplements_FYDKCc"
+    "unique_supplements_FYDKCc",
+    "best_sellers_GUh4Mn"
   ]
 }
