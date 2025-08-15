@@ -140,5 +140,6 @@ p {
   font-size: 20px;
   padding: 6px 30px;
   text-align: center;
+  text-decoration: none;
   transition: background .2s ease, color .2s ease, transform .05s ease;
 }
