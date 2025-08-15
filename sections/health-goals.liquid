@@ -1,9 +1,8 @@
 <style>
-      .collections-section {
+  .collections-section {
     background: #000;
     color: #fff;
     padding: 4rem 2rem;
-    font-family: system-ui, sans-serif;
   }
 
   .collections-header {
@@ -69,19 +68,19 @@
   }
 </style>
 
-<section class="collections-section">
-  <div class="collections-header">
+<section class="supplements-collections">
+  <div class="supplements-collections-header">
     <h2>{{ section.settings.section_title }}</h2>
     <a href="{{ section.settings.shop_all_link }}" class="collections-link">Shop All</a>
   </div>
-  <div class="collections-grid">
+  <div class="supplements-collections-grid">
     {% for collection in collections %}
       {% if collection.handle != 'all' %}
-        <a href="{{ collection.url }}" class="collection-card">
+        <a href="{{ collection.url }}" class="supplements-collection-card">
           {% if collection.image %}
-            <img src="{{ collection.image | img_url: '600x' }}" alt="{{ collection.title }}">
+            <img src="{{ collection.image | img_url: 'master' }}" alt="{{ collection.title }}">
           {% else %}
-            <div class="collection-placeholder">No Image</div>
+            <div class="supplements-collection-placeholder">No Image</div>
           {% endif %}
           <h3>{{ collection.title }}</h3>
         </a>
@@ -90,10 +89,10 @@
   </div>
 </section>
 
-<!-- Section: All Collections Grid -->
+<!-- Section: Supplements Collections -->
 {% schema %}
 {
-  "name": "All Collections Grid",
+  "name": "Supplements Collections",
   "settings": [
     {
       "type": "text",
@@ -110,8 +109,8 @@
   ],
   "presets": [
     {
-      "name": "All Collections",
-      "category": "Custom"
+      "name": "Supplements Collections",
+      "category": "Collection"
     }
   ]
 }
