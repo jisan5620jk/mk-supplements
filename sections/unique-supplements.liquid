@@ -88,9 +88,13 @@
     min-width: 200px;
   }
 
-  .unique-supplements-feature-card-img img {
+  .unique-supplements-feature-card-icon img {
     width: 100%;
-    max-width: 36px;
+    max-width: 46px;
+  }
+
+  .unique-supplements-feature-card-icon img {
+    width: inherit;
   }
 
   .unique-supplements-feature-card-content h4 {
@@ -138,9 +142,14 @@
       {% for block in section.blocks %}
         <div class="swiper-slide">
           <div class="unique-supplements-feature-card">
-            <div class="unique-supplements-feature-card-img">
+            <div class="unique-supplements-feature-card-icon">
               {% if block.settings.icon %}
-                <img src="{{ block.settings.icon | image_url: 'master' }}" alt="{{ block.settings.label }}">
+                <img
+                  src="{{ block.settings.icon | image_url: 'master' }}"
+                  width="100%"
+                  height="auto"
+                  alt="{{ block.settings.label }}"
+                >
               {% endif %}
             </div>
             <div class="unique-supplements-feature-card-content">
