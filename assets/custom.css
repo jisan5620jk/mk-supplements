@@ -136,6 +136,13 @@ a {
   margin: 0 auto;
 }
 
+.section-title {
+  font-family: 'NewKansas';
+  font-weight: 600;
+  font-size: 48px;
+  text-align: center;
+}
+
 .primary-button {
   max-width: 265px;
   font-family: 'SAASERIESFDOT';
