@@ -278,7 +278,7 @@
         "accent": "#2b2b2b",
         "a11y_label": "Company services and values",
         "image_ratio": "4 / 3",
-        "slides_desktop": 4,
+        "slides_desktop": 3,
         "slides_tablet": 2,
         "slides_mobile": 1,
         "space_between": 24,
