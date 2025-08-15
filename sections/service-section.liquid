@@ -165,7 +165,7 @@
       {% if section.settings.heading != blank or section.settings.subheading != blank %}
         <header class="services__header">
           {% if section.settings.heading != blank %}
-            <h2 class="services__heading">{{ section.settings.heading | escape }}</h2>
+            <h2 class="section-title">{{ section.settings.heading | escape }}</h2>
           {% endif %}
           {% if section.settings.subheading != blank %}
             <p class="services__subheading">{{ section.settings.subheading }}</p>
