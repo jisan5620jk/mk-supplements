@@ -268,9 +268,6 @@
   </script>
 </section>
 
-{%- comment -%}
-  Reusable inline snippet for product card (kept in this same file via 'render' with inline template)
-{%- endcomment -%}
 {% schema %}
 {
   "name": "Products Slider",
@@ -307,7 +304,6 @@
     },
 
     { "type": "header", "content": "Slider settings" },
-    { "type": "checkbox", "id": "load_swiper_assets", "label": "Load Swiper CDN (CSS + JS)", "default": true },
     {
       "type": "range",
       "id": "slides_desktop",
