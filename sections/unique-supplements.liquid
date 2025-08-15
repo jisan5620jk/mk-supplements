@@ -1,0 +1,124 @@
+{% schema %}
+{
+  "name": "Unique Supplements Video",
+  "tag": "section",
+  "class": "unique-supplements-video",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Video Poster"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Unique Supplements Video",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="video-wrapper">
+  {% if section.settings.poster_image %}
+    <img
+      src="{{ section.settings.poster_image | image_url: width: 1600 }}"
+      alt="Video Poster"
+      class="video-poster"
+      id="videoPoster-{{ section.id }}"
+    >
+  {% endif %}
+
+  <div class="play-button" id="playButton-{{ section.id }}"></div>
+
+  {% if section.settings.video_url %}
+    <video id="video-{{ section.id }}" controls>
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  {% endif %}
+</div>
+
+<style>
+  .unique-supplements-video .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .unique-supplements-video .video-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+  }
+
+  .unique-supplements-video .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .unique-supplements-video .play-button:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .unique-supplements-video .play-button::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #000;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+  }
+
+  .unique-supplements-video video {
+    width: 100%;
+    height: 100%;
+    display: none;
+    border-radius: 12px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const id = '{{ section.id }}';
+    const poster = document.getElementById('videoPoster-' + id);
+    const playBtn = document.getElementById('playButton-' + id);
+    const video = document.getElementById('video-' + id);
+
+    function playVideo() {
+      if (poster) poster.style.display = 'none';
+      if (playBtn) playBtn.style.display = 'none';
+      if (video) {
+        video.style.display = 'block';
+        video.play();
+      }
+    }
+
+    if (poster) poster.addEventListener('click', playVideo);
+    if (playBtn) playBtn.addEventListener('click', playVideo);
+  });
+</script>
