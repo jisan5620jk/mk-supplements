@@ -80,7 +80,7 @@
             {% endif %}
           {% endcapture %}
 
-          <div class="Supplements-collection-image">
+          <div class="supplements-collection-image">
             {{ img_html }}
           </div>
           <h3>{{ collection.title }}</h3>
@@ -94,13 +94,13 @@
         grid-template-columns: repeat({{ section.settings.product_column }}, 1fr);
         gap: 2rem;
     }
-
+    .Supplements-collection-image{
       display: grid;
       place-items: center;
       aspect-ratio: {{ section.settings.image_ratio }};
       overflow: hidden;
     }
-    #supplements-{{ section_id }} .product-card .image img{
+    .supplements-collection-image img{
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -145,6 +145,17 @@
       "id": "all_product_btn",
       "label": "Write All product button text",
       "default": "SHOP ALL HEALTH GOALS"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "default": "1 / 1",
+      "options": [
+        { "value": "1 / 1", "label": "Square" },
+        { "value": "4 / 5", "label": "Portrait" },
+        { "value": "4 / 3", "label": "Landscape" }
+      ]
     }
   ],
   "presets": [
