@@ -6,7 +6,7 @@
 {%- assign the_product = product -%}
 
 <div class="swiper-slide">
-  <div class="product-cart">
+  <div class="product-card">
     <a class="image" href="{% if coll %}{{ the_product.url | within: coll }}{% else %}{{ the_product.url }}{% endif %}">
       {%- if the_product.featured_image -%}
         <img
