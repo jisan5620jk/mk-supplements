@@ -218,12 +218,16 @@
         "marquee_speed": 40
       }
     },
-    "health_goals_jU9zmK": {
-      "type": "health-goals",
+    "supplements_collections_PhUTcY": {
+      "type": "supplements-collections",
       "name": "Supplements Collections",
       "settings": {
+        "enable_boxed_section": true,
+        "product_column": 4,
         "section_title": "Shop by Health Goals",
-        "shop_all_link": "shopify://collections"
+        "shop_all_link": "shopify://collections",
+        "all_product_btn": "SHOP ALL HEALTH GOALS",
+        "image_ratio": "4 / 5"
       }
     }
   },
@@ -232,6 +236,6 @@
     "promo_section_kgQgbe",
     "products_section_idhCmp",
     "unique_supplements_FYDKCc",
-    "health_goals_jU9zmK"
+    "supplements_collections_PhUTcY"
   ]
 }
