@@ -80,15 +80,6 @@
       max-width: var(--container-max);
       margin: 0 auto;
     }
-    #supplements-{{ section_id }} .title{
-      color: var(--title-color);
-      text-align: center;
-      font-size: clamp(26px, 3.4vw, 44px);
-      line-height: 1.2;
-      margin: 0 0 8px;
-      font-weight: 800;
-      letter-spacing: .2px;
-    }
     #supplements-{{ section_id }} .subtitle{
       max-width: 900px;
       margin: 0 auto 28px;
@@ -103,7 +94,7 @@
     #supplements-{{ section_id }} .swiper-slide{
       height: auto;
     }
-    #supplements-{{ section_id }} .card{
+    #supplements-{{ section_id }} .product-cart{
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 12px;
@@ -114,7 +105,7 @@
       grid-template-rows: auto auto auto auto auto;
       gap: 8px;
     }
-    #supplements-{{ section_id }} .card .image{
+    #supplements-{{ section_id }} .product-cart .image{
       background: #fff;
       border-radius: 12px;
       display: grid;
@@ -122,12 +113,12 @@
       aspect-ratio: {{ section.settings.image_ratio }};
       overflow: hidden;
     }
-    #supplements-{{ section_id }} .card .image img{
+    #supplements-{{ section_id }} .product-cart .image img{
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
-    #supplements-{{ section_id }} .card h3{
+    #supplements-{{ section_id }} .product-cart h3{
       font-size: 16px;
       margin: 6px 0 2px;
       line-height: 1.3;
@@ -239,35 +230,34 @@
     }
     #supplements-{{ section_id }} .swiper-wrapper{ gap: 0; }
   </style>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const swiper = new Swiper('.product-slider-{{ section_id }}', {
-            slidesPerView: {{ section.settings.slides_desktop | default: 4 }},
-            spaceBetween: {{ section.settings.space_between | default: 24 }},
-            loop: {{ section.settings.loop | json }},
-            speed: {{ section.settings.speed | default: 600 }},
-            grabCursor: {{ section.settings.grab_cursor | json }},
-            centeredSlides: {{ section.settings.centered | json }},
-            navigation: {{ section.settings.show_navigation | json }} ? {
-            prevEl: '#prev-{{ section_id }}',
-            nextEl: '#next-{{ section_id }}'
-            } : undefined,
-            autoplay: {{ section.settings.autoplay | json }} ? {
-            delay: {{ section.settings.autoplay_delay | default: 4000 }},
-            disableOnInteraction: false,
-            pauseOnMouseEnter: {{ section.settings.pause_on_hover | json }}
-            } : false,
-            breakpoints: {
-            0:   { slidesPerView: {{ section.settings.slides_mobile | default: 1 }}, spaceBetween: {{ section.settings.space_between_mobile | default: section.settings.space_between }} },
-            750: { slidesPerView: {{ section.settings.slides_tablet | default: 2 }}, spaceBetween: {{ section.settings.space_between_tablet | default: section.settings.space_between }} },
-            990: { slidesPerView: {{ section.settings.slides_desktop | default: 4 }}, spaceBetween: {{ section.settings.space_between | default: 24 }} }
-            }
-        });
-    });
-  </script>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.product-slider-{{ section_id }}', {
+          slidesPerView: {{ section.settings.slides_desktop | default: 4 }},
+          spaceBetween: {{ section.settings.space_between | default: 24 }},
+          loop: {{ section.settings.loop | json }},
+          speed: {{ section.settings.speed | default: 600 }},
+          grabCursor: {{ section.settings.grab_cursor | json }},
+          centeredSlides: {{ section.settings.centered | json }},
+          navigation: {{ section.settings.show_navigation | json }} ? {
+          prevEl: '#prev-{{ section_id }}',
+          nextEl: '#next-{{ section_id }}'
+          } : undefined,
+          autoplay: {{ section.settings.autoplay | json }} ? {
+          delay: {{ section.settings.autoplay_delay | default: 4000 }},
+          disableOnInteraction: false,
+          pauseOnMouseEnter: {{ section.settings.pause_on_hover | json }}
+          } : false,
+          breakpoints: {
+          0:   { slidesPerView: {{ section.settings.slides_mobile | default: 1 }}, spaceBetween: {{ section.settings.space_between_mobile | default: section.settings.space_between }} },
+          750: { slidesPerView: {{ section.settings.slides_tablet | default: 2 }}, spaceBetween: {{ section.settings.space_between_tablet | default: section.settings.space_between }} },
+          990: { slidesPerView: {{ section.settings.slides_desktop | default: 4 }}, spaceBetween: {{ section.settings.space_between | default: 24 }} }
+          }
+      });
+  });
+</script>
 {% schema %}
 {
   "name": "Products Slider",
