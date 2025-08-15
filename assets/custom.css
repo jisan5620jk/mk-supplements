@@ -1,171 +1,170 @@
-/* === Google Fonts === */
+/* === IBM Plex Mono and Rubik Fonts === */
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 /* ==== SAASERIES FONTS ==== */
-@import url('https://fonts.cdnfonts.com/css/saaseriesadot');
+@import url("https://fonts.cdnfonts.com/css/saaseriesadot");
 
 /* ==== HvDTrial_Americane ==== */
-@import url('https://fonts.cdnfonts.com/css/hvdtrial-americane-condensed');
+@import url("https://fonts.cdnfonts.com/css/hvdtrial-americane-condensed");
 
 /* ==== NEW KANSAS ==== */
 @font-face {
-  font-family: 'NewKansas';
-  src: url('fonnts.com-New-Kansas.otf') format('opentype');
+  font-family: "NewKansas";
+  src: url("fonnts.com-New-Kansas.otf") format("opentype");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: 'NewKansas';
-  src: url('fonnts.com-New-Kansas-Bold.otf') format('opentype');
+  font-family: "NewKansas";
+  src: url("fonnts.com-New-Kansas-Bold.otf") format("opentype");
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
-  font-family: 'NewKansas';
-  src: url('fonnts.com-New-Kansas-Black.otf') format('opentype');
+  font-family: "NewKansas";
+  src: url("fonnts.com-New-Kansas-Black.otf") format("opentype");
   font-weight: 900;
   font-display: swap;
 }
 @font-face {
-  font-family: 'NewKansas';
-  src: url('fonnts.com-New-Kansas-Light.otf') format('opentype');
+  font-family: "NewKansas";
+  src: url("fonnts.com-New-Kansas-Light.otf") format("opentype");
   font-weight: 300;
   font-display: swap;
 }
 @font-face {
-  font-family: 'NewKansas';
-  src: url('fonnts.com-New-Kansas-Medium.otf') format('opentype');
+  font-family: "NewKansas";
+  src: url("fonnts.com-New-Kansas-Medium.otf") format("opentype");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
-  font-family: 'NewKansas';
-  src: url('fonnts.com-New-Kansas-Semi-Bold.otf') format('opentype');
+  font-family: "NewKansas";
+  src: url("fonnts.com-New-Kansas-Semi-Bold.otf") format("opentype");
   font-weight: 600;
   font-display: swap;
 }
 @font-face {
-  font-family: 'NewKansas';
-  src: url('fonnts.com-New-Kansas-Thin.otf') format('opentype');
+  font-family: "NewKansas";
+  src: url("fonnts.com-New-Kansas-Thin.otf") format("opentype");
   font-weight: 100;
   font-display: swap;
 }
 
 /* === Americane font === */
 @font-face {
-  font-family: 'Americane';
-  src: url('assets/fonts/Americane-Regular.otf') format('opentype');
+  font-family: "Americane";
+  src: url("Americane-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Americane';
-  src: url('assets/fonts/Americane-Italic.otf') format('opentype');
+  font-family: "Americane";
+  src: url("Americane-Italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Americane';
-  src: url('assets/fonts/Americane-Light.otf') format('opentype');
+  font-family: "Americane";
+  src: url("Americane-Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Americane';
-  src: url('assets/fonts/Americane-Light-Italic.otf') format('opentype');
+  font-family: "Americane";
+  src: url("Americane-Light-Italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Americane';
-  src: url('assets/fonts/Americane-Bold.otf') format('opentype');
+  font-family: "Americane";
+  src: url("Americane-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Americane';
-  src: url('assets/fonts/Americane-Bold-Italic.otf') format('opentype');
+  font-family: "Americane";
+  src: url("Americane-Bold-Italic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Americane';
-  src: url('assets/fonts/Americane-Black.otf') format('opentype');
+  font-family: "Americane";
+  src: url("Americane-Black.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Americane';
-  src: url('assets/fonts/Americane-Black-Italic.otf') format('opentype');
+  font-family: "Americane";
+  src: url("Americane-Black-Italic.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
 }
 
 /* Condensed variants */
 @font-face {
-  font-family: 'Americane Cond';
-  src: url('assets/fonts/Americane-Cond.otf') format('opentype');
+  font-family: "Americane Cond";
+  src: url("Americane-Cond.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Americane Cond';
-  src: url('assets/fonts/Americane-Cond-Italic.otf') format('opentype');
+  font-family: "Americane Cond";
+  src: url("Americane-Cond-Italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Americane Cond';
-  src: url('assets/fonts/Americane-Cond-Light.otf') format('opentype');
+  font-family: "Americane Cond";
+  src: url("Americane-Cond-Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Americane Cond';
-  src: url('assets/fonts/Americane-Cond-Light-Italic.otf') format('opentype');
+  font-family: "Americane Cond";
+  src: url("Americane-Cond-Light-Italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Americane Cond';
-  src: url('assets/fonts/Americane-Cond-Bold.otf') format('opentype');
+  font-family: "Americane Cond";
+  src: url("Americane-Cond-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Americane Cond';
-  src: url('assets/fonts/Americane-Cond-Bold-Italic.otf') format('opentype');
+  font-family: "Americane Cond";
+  src: url("Americane-Cond-Bold-Italic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Americane Cond';
-  src: url('assets/fonts/Americane-Cond-Black.otf') format('opentype');
+  font-family: "Americane Cond";
+  src: url("Americane-Cond-Black.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Americane Cond';
-  src: url('assets/fonts/Americane-Cond-Black-Italic.otf') format('opentype');
+  font-family: "Americane Cond";
+  src: url("Americane-Cond-Black-Italic.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
 }
-
 
 p {
   margin: 0px;
@@ -183,17 +182,17 @@ a {
 }
 
 .section-title {
-  font-family: 'NewKansas';
+  font-family: "NewKansas";
   font-weight: 600;
   font-size: 48px;
   text-align: center;
-  color: #4C2B1D;
+  color: #4c2b1d;
   margin: 0px;
 }
 
 .primary-button {
   max-width: 265px;
-  font-family: 'SaaSeriesADOT';
+  font-family: "SaaSeriesADOT";
   font-weight: 400;
   font-size: 20px;
   padding: 6px 30px;
@@ -201,5 +200,5 @@ a {
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
-  transition: background .2s ease, color .2s ease, transform .05s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.05s ease;
 }
