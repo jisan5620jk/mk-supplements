@@ -1,0 +1,85 @@
+{% comment %}
+  Snippet: supplement-card
+  Usage: {% render 'supplement-card', product: product, btn_text: 'Shop now', coll: collection %}
+{% endcomment %}
+
+{%- assign the_product = product -%}
+
+<div class="swiper-slide">
+  <div class="card">
+    <a class="image" href="{% if coll %}{{ the_product.url | within: coll }}{% else %}{{ the_product.url }}{% endif %}">
+      {%- if the_product.featured_image -%}
+        <img
+          src="{{ the_product.featured_image | image_url: width: 800 }}"
+          srcset="
+            {{ the_product.featured_image | image_url: width: 300 }} 300w,
+            {{ the_product.featured_image | image_url: width: 500 }} 500w,
+            {{ the_product.featured_image | image_url: width: 700 }} 700w,
+            {{ the_product.featured_image | image_url: width: 900 }} 900w
+          "
+          sizes="(min-width: 990px) 280px, (min-width: 750px) 45vw, 90vw"
+          alt="{{ the_product.featured_image.alt | escape }}"
+          loading="lazy"
+          width="{{ the_product.featured_image.width }}"
+          height="{{ the_product.featured_image.height }}"
+        >
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag }}
+      {%- endif -%}
+    </a>
+
+    <h3>
+      <a href="{% if coll %}{{ the_product.url | within: coll }}{% else %}{{ the_product.url }}{% endif %}">
+        {{ the_product.title | escape }}
+      </a>
+    </h3>
+
+    {%- liquid
+      assign rating_val = 0
+      assign rating_count = 0
+      assign rating_max = 5
+
+      if the_product.metafields.reviews.rating.value
+        assign rating_obj = the_product.metafields.reviews.rating.value
+        if rating_obj.rating
+          assign rating_val = rating_obj.rating
+          assign rating_max = rating_obj.scale_max | default: 5
+        else
+          assign rating_val = rating_obj
+        endif
+        assign rating_count = the_product.metafields.reviews.rating_count | default: 0
+      endif
+    -%}
+
+    <div class="rating" aria-label="Rated {{ rating_val }} out of {{ rating_max }}">
+      <span class="stars" style="--rating: {{ rating_val | default: 0 }}; --rating-max: {{ rating_max | default: 5 }};">
+        <span class="base" aria-hidden="true"></span>
+        <span class="fill" aria-hidden="true"></span>
+      </span>
+      <small>
+        {%- if rating_count > 0 -%}
+          {{ rating_count }} review{% if rating_count != 1 %}s{% endif %}
+        {%- else -%}
+          No reviews
+        {%- endif -%}
+      </small>
+    </div>
+
+    <div class="price">
+      {%- if the_product.compare_at_price_max > the_product.price -%}
+        <span class="compare">{{ the_product.compare_at_price | money }}</span>
+      {%- endif -%}
+      <span class="current">
+        {%- if the_product.price_varies -%}
+          From {{ the_product.price_min | money }}
+        {%- else -%}
+          {{ the_product.price | money }}
+        {%- endif -%}
+      </span>
+    </div>
+
+    <a class="btn" href="{% if coll %}{{ the_product.url | within: coll }}{% else %}{{ the_product.url }}{% endif %}">
+      {{ btn_text | default: 'Shop now' }}
+    </a>
+  </div>
+</div>
