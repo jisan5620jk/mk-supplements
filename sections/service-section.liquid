@@ -156,7 +156,10 @@
   }
 </style>
 
-<section id="{{ section_id }}" class="services">
+<section
+  id="{{ section_id }}"
+  class="services-section {% if section.settings.enable_boxed_section %}boxed-section{% endif %}"
+>
   <div class="services__wrap">
     <div class="services__container">
       {% if section.settings.heading != blank or section.settings.subheading != blank %}
