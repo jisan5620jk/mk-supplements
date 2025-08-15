@@ -55,7 +55,7 @@
 /* === Americane font === */
 @font-face {
   font-family: "Americane";
-  src: url("fonnts.com-Americane-Regular.otf") format("opentype");
+  src: url("fonnts.com-Americane_Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -63,7 +63,7 @@
 
 @font-face {
   font-family: "Americane";
-  src: url("fonnts.com-Americane-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane_Italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -71,7 +71,7 @@
 
 @font-face {
   font-family: "Americane";
-  src: url("fonnts.com-Americane-Light.otf") format("opentype");
+  src: url("fonnts.com-Americane_Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -79,7 +79,7 @@
 
 @font-face {
   font-family: "Americane";
-  src: url("fonnts.com-Americane-Light-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane_Light_Italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -87,7 +87,7 @@
 
 @font-face {
   font-family: "Americane";
-  src: url("fonnts.com-Americane-Bold.otf") format("opentype");
+  src: url("fonnts.com-Americane_Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -95,7 +95,7 @@
 
 @font-face {
   font-family: "Americane";
-  src: url("fonnts.com-Americane-Bold-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane_Bold_Italic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -103,7 +103,7 @@
 
 @font-face {
   font-family: "Americane";
-  src: url("fonnts.com-Americane-Black.otf") format("opentype");
+  src: url("fonnts.com-Americane_Black.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -111,7 +111,7 @@
 
 @font-face {
   font-family: "Americane";
-  src: url("fonnts.com-Americane-Black-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane_Black_Italic.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -120,7 +120,7 @@
 /* Condensed variants */
 @font-face {
   font-family: "Americane Cond";
-  src: url("fonnts.com-Americane-Cond.otf") format("opentype");
+  src: url("fonnts.com-Americane_Cond.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -128,7 +128,7 @@
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("fonnts.com-Americane-Cond-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane_Cond_Italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -136,7 +136,7 @@
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("fonnts.com-Americane-Cond-Light.otf") format("opentype");
+  src: url("fonnts.com-Americane_Cond_Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -144,7 +144,7 @@
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("fonnts.com-Americane-Cond-Light-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane_Cond_Light_Italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -152,7 +152,7 @@
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("fonnts.com-Americane-Cond-Bold.otf") format("opentype");
+  src: url("fonnts.com-Americane_Cond_Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -160,7 +160,7 @@
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("fonnts.com-Americane-Cond-Bold-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane_Cond_Bold_Italic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -168,7 +168,7 @@
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("fonnts.com-Americane-Cond-Black.otf") format("opentype");
+  src: url("fonnts.com-Americane_Cond_Black.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -176,7 +176,7 @@
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("fonnts.com-Americane-Cond-Black-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane-Cond_Black_Italic.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
