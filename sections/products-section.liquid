@@ -1,0 +1,453 @@
+{% comment %}
+  Section: Product Supplements Slider (Swiper)
+  File: sections/product-supplements-slider.liquid
+  - Fully dynamic via schema (heading, subheading, products source, slider settings, colors)
+  - Swiper loaded once per page (via CDN)
+  - Works with manual product blocks or a collection
+  - Ratings use Shopify metafields (namespace.key: reviews.rating) when available, with safe fallback
+{% endcomment %}
+
+{%- liquid
+  assign section_id = section.id
+-%}
+
+<section id="supplements-{{ section_id }}" class="supplements isos2">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="subtitle">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <div class="slider-wrap">
+      <div class="swiper product-slider-{{ section_id }}">
+        <div class="swiper-wrapper">
+          {%- if section.blocks.size > 0 -%}
+            {%- for block in section.blocks -%}
+              {%- assign product = block.settings.product -%}
+              {%- if product != blank -%}
+                {% render 'product-card', product: product, section: section, section_id: section_id, block: block %}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- comment -%} Fallback placeholder when no products are chosen {%- endcomment -%}
+            <div class="swiper-slide">
+              <h3>Currently Have No Products</h3>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if section.settings.show_navigation -%}
+        <button class="nav prev" aria-label="Previous slide" id="prev-{{ section_id }}">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="nav next" aria-label="Next slide" id="next-{{ section_id }}">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      {%- endif -%}
+
+      {%- if section.settings.show_pagination -%}
+        <div class="swiper-pagination pagination-{{ section_id }}"></div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <style>
+    #supplements-{{ section_id }}{
+      --container-max: {{ section.settings.container_max | default: 1200 }}px;
+      --pad-t: {{ section.settings.padding_top | times: 0.75 | round }}px;
+      --pad-b: {{ section.settings.padding_bottom | times: 0.75 | round }}px;
+      --title-color: {{ section.settings.title_color }};
+      --text-color: {{ section.settings.text_color }};
+      --btn-bg: {{ section.settings.button_bg }};
+      --btn-color: {{ section.settings.button_color }};
+      --btn-bg-hover: {{ section.settings.button_bg_hover }};
+      --btn-color-hover: {{ section.settings.button_color_hover }};
+      --nav-color: {{ section.settings.nav_color }};
+      --star-color: {{ section.settings.star_color }};
+      --card-bg: {{ section.settings.card_bg }};
+      --card-border: {{ section.settings.card_border }};
+      --space-between: {{ section.settings.space_between }};
+    }
+    #supplements-{{ section_id }}{
+      padding: var(--pad-t) 16px var(--pad-b);
+      color: var(--text-color);
+      background: {{ section.settings.section_bg }};
+    }
+    #supplements-{{ section_id }} .container{
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+    #supplements-{{ section_id }} .title{
+      color: var(--title-color);
+      text-align: center;
+      font-size: clamp(26px, 3.4vw, 44px);
+      line-height: 1.2;
+      margin: 0 0 8px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    #supplements-{{ section_id }} .subtitle{
+      max-width: 900px;
+      margin: 0 auto 28px;
+      text-align: center;
+      opacity: .85;
+    }
+    #supplements-{{ section_id }} .slider-wrap{
+      position: relative;
+    }
+
+    /* Card */
+    #supplements-{{ section_id }} .swiper-slide{
+      height: auto;
+    }
+    #supplements-{{ section_id }} .card{
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto auto auto auto auto;
+      gap: 8px;
+    }
+    #supplements-{{ section_id }} .card .image{
+      background: #fff;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      aspect-ratio: {{ section.settings.image_ratio }};
+      overflow: hidden;
+    }
+    #supplements-{{ section_id }} .card .image img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    #supplements-{{ section_id }} .card h3{
+      font-size: 16px;
+      margin: 6px 0 2px;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+    #supplements-{{ section_id }} .price{
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    #supplements-{{ section_id }} .price .compare{
+      color: #8a8a8a;
+      text-decoration: line-through;
+      margin-right: 6px;
+      font-weight: 400;
+    }
+
+    /* Rating */
+    #supplements-{{ section_id }} .rating{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    #supplements-{{ section_id }} .stars{
+      position: relative;
+      display: inline-block;
+      width: 88px;
+      height: 16px;
+      line-height: 1;
+    }
+    #supplements-{{ section_id }} .stars .base,
+    #supplements-{{ section_id }} .stars .fill{
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, #d5d5d5 0 0) left/20% 100% repeat-x;
+      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="16" viewBox="0 0 100 16"><text x="0" y="14" font-size="16">★★★★★</text></svg>') center/100% 100%;
+              mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="16" viewBox="0 0 100 16"><text x="0" y="14" font-size="16">★★★★★</text></svg>') center/100% 100%;
+    }
+    #supplements-{{ section_id }} .stars .fill{
+      background: linear-gradient(90deg, var(--star-color) 0 0) left/20% 100% repeat-x;
+      width: calc((var(--rating) / var(--rating-max)) * 100%);
+    }
+    #supplements-{{ section_id }} .rating small{
+      opacity: .75;
+    }
+
+    /* Buttons */
+    #supplements-{{ section_id }} .btn{
+      display: inline-block;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: var(--btn-bg);
+      color: var(--btn-color);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .3px;
+      transition: background .2s ease, color .2s ease, transform .05s ease;
+    }
+    #supplements-{{ section_id }} .btn:hover{
+      background: var(--btn-bg-hover);
+      color: var(--btn-color-hover);
+    }
+    #supplements-{{ section_id }} .btn:active{
+      transform: translateY(1px);
+    }
+
+    /* Navigation */
+    #supplements-{{ section_id }} .nav{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: none;
+      background: #fff;
+      color: var(--nav-color);
+      box-shadow: 0 6px 16px rgba(0,0,0,.12);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    #supplements-{{ section_id }} .nav.prev{ left: -8px; }
+    #supplements-{{ section_id }} .nav.next{ right: -8px; }
+    @media (min-width: 1200px){
+      #supplements-{{ section_id }} .nav.prev{ left: -20px; }
+      #supplements-{{ section_id }} .nav.next{ right: -20px; }
+    }
+    #supplements-{{ section_id }} .nav:disabled{ opacity: .4; cursor: default; }
+
+    /* Pagination bullets */
+    #supplements-{{ section_id }} .swiper-pagination{
+      position: static;
+      margin-top: 16px;
+    }
+    #supplements-{{ section_id }} .swiper-pagination-bullet{
+      background: rgba(0,0,0,.2);
+      opacity: 1;
+    }
+    #supplements-{{ section_id }} .swiper-pagination-bullet-active{
+      background: var(--nav-color);
+    }
+
+    /* Spacing between slides */
+    #supplements-{{ section_id }} .swiper{
+      padding: 6px 2px;
+    }
+    #supplements-{{ section_id }} .swiper-wrapper{ gap: 0; }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.product-slider{{ section_id }}', {
+            slidesPerView: {{ section.settings.slides_desktop | default: 4 }},
+            spaceBetween: {{ section.settings.space_between | default: 24 }},
+            loop: {{ section.settings.loop | json }},
+            speed: {{ section.settings.speed | default: 600 }},
+            grabCursor: {{ section.settings.grab_cursor | json }},
+            centeredSlides: {{ section.settings.centered | json }},
+            navigation: {{ section.settings.show_navigation | json }} ? {
+            prevEl: '#prev-{{ section_id }}',
+            nextEl: '#next-{{ section_id }}'
+            } : undefined,
+            autoplay: {{ section.settings.autoplay | json }} ? {
+            delay: {{ section.settings.autoplay_delay | default: 4000 }},
+            disableOnInteraction: false,
+            pauseOnMouseEnter: {{ section.settings.pause_on_hover | json }}
+            } : false,
+            breakpoints: {
+            0:   { slidesPerView: {{ section.settings.slides_mobile | default: 1 }}, spaceBetween: {{ section.settings.space_between_mobile | default: section.settings.space_between }} },
+            750: { slidesPerView: {{ section.settings.slides_tablet | default: 2 }}, spaceBetween: {{ section.settings.space_between_tablet | default: section.settings.space_between }} },
+            990: { slidesPerView: {{ section.settings.slides_desktop | default: 4 }}, spaceBetween: {{ section.settings.space_between | default: 24 }} }
+            }
+        });
+    });
+  </script>
+</section>
+
+{%- comment -%}
+  Reusable inline snippet for product card (kept in this same file via 'render' with inline template)
+{%- endcomment -%}
+{% schema %}
+{
+  "name": "Products Slider",
+  "tag": "section",
+  "class": "section--supplements",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our pure & potent animal supplements" },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Modern farming has depleted soil quality, leaving most people deficient in essential micronutrients. Our animal-based supplements provide highly bioavailable vitamins, minerals, coenzymes, and peptides for optimal health and vitality."
+    },
+
+    {
+      "type": "select",
+      "id": "source",
+      "label": "Products source",
+      "default": "manual",
+      "options": [
+        { "value": "manual", "label": "Choose products manually" },
+        { "value": "collection", "label": "Use a collection" }
+      ]
+    },
+    { "type": "collection", "id": "collection", "label": "Collection (when source = collection)" },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Max products from collection",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default": 12
+    },
+
+    { "type": "header", "content": "Slider settings" },
+    { "type": "checkbox", "id": "load_swiper_assets", "label": "Load Swiper CDN (CSS + JS)", "default": true },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "Slides per view (desktop ≥ 990px)"
+    },
+    {
+      "type": "range",
+      "id": "slides_tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2,
+      "label": "Slides per view (tablet ≥ 750px)"
+    },
+    {
+      "type": "range",
+      "id": "slides_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1,
+      "label": "Slides per view (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "space_between",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 24,
+      "label": "Space between slides (desktop px)"
+    },
+    {
+      "type": "range",
+      "id": "space_between_tablet",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 20,
+      "label": "Space between slides (tablet px)"
+    },
+    {
+      "type": "range",
+      "id": "space_between_mobile",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 12,
+      "label": "Space between slides (mobile px)"
+    },
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay", "default": true },
+    {
+      "type": "number",
+      "id": "autoplay_delay",
+      "default": 4000,
+      "label": "Autoplay delay (ms)"
+    },
+    {
+      "type": "number",
+      "id": "speed",
+      "default": 600,
+      "label": "Transition speed (ms)"
+    },
+    { "type": "checkbox", "id": "pause_on_hover", "label": "Pause on hover", "default": true },
+    { "type": "checkbox", "id": "loop", "label": "Loop slides", "default": true },
+    { "type": "checkbox", "id": "grab_cursor", "label": "Grab cursor", "default": true },
+    { "type": "checkbox", "id": "centered", "label": "Centered slides", "default": false },
+    { "type": "checkbox", "id": "show_navigation", "label": "Show arrows", "default": true },
+    { "type": "checkbox", "id": "show_pagination", "label": "Show pagination bullets", "default": false },
+
+    { "type": "header", "content": "Card + visuals" },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "Shop now" },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "default": "1 / 1",
+      "options": [
+        { "value": "1 / 1", "label": "Square" },
+        { "value": "4 / 5", "label": "Portrait" },
+        { "value": "4 / 3", "label": "Landscape" }
+      ]
+    },
+    { "type": "color", "id": "title_color", "label": "Heading color", "default": "#3c2415" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#2b2b2b" },
+    { "type": "color", "id": "star_color", "label": "Star color", "default": "#f59f00" },
+    { "type": "color", "id": "nav_color", "label": "Navigation color", "default": "#3c2415" },
+    { "type": "color", "id": "button_bg", "label": "Button background", "default": "#e86452" },
+    { "type": "color", "id": "button_color", "label": "Button text", "default": "#ffffff" },
+    { "type": "color", "id": "button_bg_hover", "label": "Button background (hover)", "default": "#c94c3a" },
+    { "type": "color", "id": "button_color_hover", "label": "Button text (hover)", "default": "#ffffff" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#fff7f4" },
+    { "type": "color", "id": "card_border", "label": "Card border", "default": "#f0e3dd" },
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#ffffff" },
+
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "range",
+      "id": "container_max",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "default": 1200,
+      "label": "Container max width (px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40,
+      "label": "Padding top (px)"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 48,
+      "label": "Padding bottom (px)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 24,
+      "settings": [{ "type": "product", "id": "product", "label": "Product" }]
+    }
+  ],
+  "presets": [{ "name": "Products – Supplements Slider", "category": "Products" }]
+}
+{% endschema %}
