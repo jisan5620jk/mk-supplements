@@ -19,7 +19,7 @@
     <h2 class="section-title">{{ section.settings.heading }}</h2>
   {%- endif -%}
   {%- if section.settings.subheading != blank -%}
-    <p class="subtitle">{{ section.settings.subheading }}</p>
+    <p class="description">{{ section.settings.subheading }}</p>
   {%- endif -%}
 
   <div class="slider-wrap">
@@ -77,7 +77,7 @@
       color: var(--text-color);
       background: {{ section.settings.section_bg }};
     }
-    #supplements-{{ section_id }} .subtitle{
+    #supplements-{{ section_id }} .description{
       max-width: 1026px;
       margin: 0 auto 28px;
       text-align: center;
