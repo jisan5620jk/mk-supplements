@@ -65,15 +65,22 @@
 
   .unique-supplements-feature {
     padding: 20px 120px;
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
   }
 
+  @media screen and (max-width: 1023px) {
+    .unique-supplements-feature {
+        animation: marquee var(--marquee-speed, 40s) linear infinite;
+    }
+  }
+
   .unique-supplements-feature-card {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     justify-content: center;
+    white-space: normal;
   }
 
   .unique-supplements-feature-card-icon img {
@@ -87,6 +94,12 @@
     font-size: 16px;
     color:#ffffff;
     margin: 0;
+  }
+
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
   }
 </style>
 
@@ -122,7 +135,7 @@
     {% endif %}
   </div>
 
-  <div class="unique-supplements-feature">
+  <div class="unique-supplements-feature" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
     {% for block in section.blocks %}
       <div class="unique-supplements-feature-card">
         <div class="unique-supplements-feature-card-icon">
