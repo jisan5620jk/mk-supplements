@@ -211,9 +211,19 @@
       ],
       "name": "Unique Supplements Video",
       "settings": {
+        "enable_boxed_section": true,
         "section_title": "Unlock Peak Health",
         "poster_image": "shopify://shop_images/video-thumbnail_1.jpg",
-        "video_url": ""
+        "video_url": "",
+        "marquee_speed": 40
+      }
+    },
+    "health_goals_jU9zmK": {
+      "type": "health-goals",
+      "name": "Supplements Collections",
+      "settings": {
+        "section_title": "Shop by Health Goals",
+        "shop_all_link": "shopify://collections"
       }
     }
   },
@@ -221,6 +231,7 @@
     "banner_slider_xNpLCB",
     "promo_section_kgQgbe",
     "products_section_idhCmp",
-    "unique_supplements_FYDKCc"
+    "unique_supplements_FYDKCc",
+    "health_goals_jU9zmK"
   ]
 }

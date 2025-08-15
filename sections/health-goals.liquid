@@ -77,11 +77,10 @@
     {% for collection in collections %}
       {% if collection.handle != 'all' %}
         <a href="{{ collection.url }}" class="supplements-collection-card">
-          {%- comment -%} ছবি ঠিক করার লজিক {%- endcomment -%}
           {% capture img_html %}
             {% if collection.image %}
             <img
-                src="{{ collection.image | image_url: 'master' }}"
+                src="{{ collection.image | img_url: 'master' }}"
                 alt="{{ collection.title | escape }}"
                 loading="lazy"
             >
@@ -89,7 +88,7 @@
             {% assign first_product = collection.products | first %}
             {% if first_product and first_product.featured_image %}
                 <img
-                src="{{ first_product.featured_image | image_url: 'master' }}"
+                src="{{ first_product.featured_image | img_url: 'master' }}"
                 alt="{{ first_product.title | escape }}"
                 loading="lazy"
                 >
@@ -97,7 +96,7 @@
                 {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
             {% endif %}
             {% endif %}
-        {% endcapture %}
+          {% endcapture %}
 
           {{ img_html }}
           <h3>{{ collection.title }}</h3>
