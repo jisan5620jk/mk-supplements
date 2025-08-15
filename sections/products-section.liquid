@@ -51,10 +51,6 @@
           </svg>
         </button>
       {%- endif -%}
-
-      {%- if section.settings.show_pagination -%}
-        <div class="swiper-pagination pagination-{{ section_id }}"></div>
-      {%- endif -%}
     </div>
   </div>
 
@@ -246,7 +242,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const swiper = new Swiper('.product-slider{{ section_id }}', {
+        const swiper = new Swiper('.product-slider-{{ section_id }}', {
             slidesPerView: {{ section.settings.slides_desktop | default: 4 }},
             spaceBetween: {{ section.settings.space_between | default: 24 }},
             loop: {{ section.settings.loop | json }},
@@ -379,12 +375,10 @@
       "default": 600,
       "label": "Transition speed (ms)"
     },
-    { "type": "checkbox", "id": "pause_on_hover", "label": "Pause on hover", "default": true },
+    { "type": "checkbox", "id": "pause_on_hover", "label": "Pause on hover", "default": false },
     { "type": "checkbox", "id": "loop", "label": "Loop slides", "default": true },
     { "type": "checkbox", "id": "grab_cursor", "label": "Grab cursor", "default": true },
-    { "type": "checkbox", "id": "centered", "label": "Centered slides", "default": false },
     { "type": "checkbox", "id": "show_navigation", "label": "Show arrows", "default": true },
-    { "type": "checkbox", "id": "show_pagination", "label": "Show pagination bullets", "default": false },
 
     { "type": "header", "content": "Card + visuals" },
     { "type": "text", "id": "button_text", "label": "Button text", "default": "Shop now" },
