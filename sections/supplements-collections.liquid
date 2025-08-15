@@ -87,7 +87,7 @@
           <div class="supplements-collection-image">
             {{ img_html }}
           </div>
-          <h3>{{ collection.title }}</h3>
+          <h3 style="color: {{ section.settings.title_color }}">{{ collection.title }}</h3>
         </a>
       {% endif %}
     {% endfor %}
@@ -149,6 +149,12 @@
       "id": "all_product_btn",
       "label": "Write All product button text",
       "default": "SHOP ALL HEALTH GOALS"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Select Title Color",
+      "default": "#fff"
     },
     {
       "type": "select",
