@@ -233,7 +233,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-      const swiper = new Swiper('.product-slider-{{ section_id }}', {
+      const swiper = new Swiper('.services-slider-{{ section_id }}', {
           slidesPerView: {{ section.settings.slides_desktop | default: 4 }},
           spaceBetween: {{ section.settings.space_between | default: 24 }},
           loop: {{ section.settings.loop | json }},
