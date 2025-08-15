@@ -3,6 +3,7 @@
       width: 100%;
       position: relative;
       overflow: hidden;
+      z-index: 10;
   }
   .banner-slider {
       background-size: cover;
@@ -10,6 +11,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
+  }
+  .banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    weight: 100%;
+    height: 100%;
+    z-index: -1;
   }
   .banner-content {
       text-align: left;
@@ -59,8 +68,10 @@
     {% for block in section.blocks %}
       <div
         class="swiper-slide banner-slider"
-        style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');"
       >
+        <div class="banner-bg">
+          <img src="{{ block.settings.background_image | image_url: 'master' }}" width="100%" height="100%">
+        </div>
         <div class="banner-content">
           <h1>{{ block.settings.headline }}</h1>
           <a href="{{ block.settings.shop_link }}" class="shop-now-button">SHOP NOW</a>
@@ -81,14 +92,14 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.banner-swiper', {
-        loop: true,
-        speed: {{ section.settings.slider_speed | default: 800 }},
-        effect: 'fade',
-        fadeEffect: { crossFade: true },
-        autoplay: {
-            delay: {{ section.settings.autoplay_delay | default: 5000 }},
-            disableOnInteraction: false
-        },
+      loop: true,
+      speed: {{ section.settings.slider_speed | default: 800 }},
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      autoplay: {
+          delay: {{ section.settings.autoplay_delay | default: 5000 }},
+          disableOnInteraction: false
+      },
     });
   });
 </script>
