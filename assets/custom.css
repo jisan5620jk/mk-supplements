@@ -5,6 +5,8 @@
 /* ==== SAASERIES FONTS ==== */
 @import url('https://fonts.cdnfonts.com/css/saaseriesadot');
 
+/* ==== HvDTrial_Americane ==== */
+@import url('https://fonts.cdnfonts.com/css/hvdtrial-americane-condensed');
 
 /* ==== NEW KANSAS ==== */
 @font-face {
@@ -47,44 +49,6 @@
   font-family: 'NewKansas';
   src: url('fonnts.com-New-Kansas-Thin.otf') format('opentype');
   font-weight: 100;
-  font-display: swap;
-}
-
-/* ==== HvDTrial_Americane ==== */
-@font-face {
-  font-family: 'HvDTrial Americane Condensed';
-  src: url('HvDTrial_Americane-Regular-BF64939f86234b5.otf') format('opentype');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'HvDTrial Americane Condensed';
-  src: url('HvDTrial_Americane-Bold-BF64939f85824ae.otf') format('opentype');
-  font-weight: 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'HvDTrial Americane Condensed';
-  src: url('HvDTrial_Americane-Black-BF64939f86040ec.otf') format('opentype');
-  font-weight: 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'HvDTrial Americane Condensed';
-  src: url('HvDTrial_Americane-Light-BF64939f8602842.otf') format('opentype');
-  font-weight: 300;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'HvDTrial Americane Condensed';
-  src: url('HvDTrial_Americane-Medium-BF64939f861512e.otf') format('opentype');
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'HvDTrial Americane Condensed';
-  src: url('HvDTrial_Americane-Heavy-BF64939f8612027.otf') format('opentype');
-  font-weight: 800;
   font-display: swap;
 }
 
