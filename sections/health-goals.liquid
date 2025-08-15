@@ -71,7 +71,7 @@
 <section class="supplements-collections">
   <div class="supplements-collections-header">
     <h2>{{ section.settings.section_title }}</h2>
-    <a href="{{ section.settings.shop_all_link }}" class="collections-link">Shop All</a>
+    <a href="{{ section.settings.shop_all_link }}" class="collections-link">{{ section.settings.all_product_btn }}</a>
   </div>
   <div class="supplements-collections-grid">
     {% for collection in collections %}
@@ -122,6 +122,12 @@
       "id": "shop_all_link",
       "label": "Shop All Link",
       "default": "/collections"
+    },
+    {
+      "type": "text",
+      "id": "all_product_btn",
+      "label": "Write All product button text",
+      "default": "SHOP ALL HEALTH GOALS"
     }
   ],
   "presets": [
