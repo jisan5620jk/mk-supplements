@@ -12,7 +12,7 @@
     "banner_slider_xNpLCB": {
       "type": "banner-slider",
       "blocks": {
-        "slide_J3gjVB": {
+        "slide_ctfQeA": {
           "type": "slide",
           "settings": {
             "background_image": "shopify://shop_images/Hero_img_1.jpg",
@@ -20,18 +20,18 @@
             "shop_link": "shopify://collections/all"
           }
         },
-        "slide_yzjb6a": {
+        "slide_tLiX3N": {
           "type": "slide",
           "settings": {
-            "background_image": "shopify://shop_images/Hero_img.jpg",
+            "background_image": "shopify://shop_images/Hero_img_2.jpg",
             "headline": "Daily energy, stamina & recovery from bison organ power.",
             "shop_link": "shopify://collections/all"
           }
         },
-        "slide_ygHXGx": {
+        "slide_qR9pzT": {
           "type": "slide",
           "settings": {
-            "background_image": "shopify://shop_images/Hero_img_2.jpg",
+            "background_image": "shopify://shop_images/Hero_img.jpg",
             "headline": "Daily energy, stamina & recovery from bison organ power.",
             "shop_link": "shopify://collections/all"
           }
@@ -42,9 +42,9 @@
         }
       },
       "block_order": [
-        "slide_J3gjVB",
-        "slide_yzjb6a",
-        "slide_ygHXGx",
+        "slide_ctfQeA",
+        "slide_tLiX3N",
+        "slide_qR9pzT",
         "judge_me_reviews_medals_dJmXMf"
       ],
       "name": "Banner Slider",
@@ -78,6 +78,7 @@
       ],
       "name": "Two Column Promo",
       "settings": {
+        "enable_boxed_section": true,
         "bg_image": "shopify://shop_images/Group_12717.png",
         "headline": "Unlock peak health with our small-batch, 100% grass-fed animal supplements.",
         "right_image": "shopify://shop_images/temp_mockups_1.png"
