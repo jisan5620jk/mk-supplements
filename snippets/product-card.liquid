@@ -28,11 +28,9 @@
       {%- endif -%}
     </a>
 
-    <h3>
-      <a href="{% if coll %}{{ the_product.url | within: coll }}{% else %}{{ the_product.url }}{% endif %}">
-        {{ the_product.title | escape }}
-      </a>
-    </h3>
+    <a href="{% if coll %}{{ the_product.url | within: coll }}{% else %}{{ the_product.url }}{% endif %}">
+      {{ the_product.title | escape }}
+    </a>
 
     {%- liquid
       assign rating_val = 0
