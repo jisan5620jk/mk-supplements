@@ -247,7 +247,7 @@
           "settings": {
             "image": "shopify://shop_images/Mask_group_1.png",
             "title": "Healthy living",
-            "text": "<p>Follow our co-founder's <strong>healthy living blog </strong>to learn more about how to optimize nutrition, exercise and sleep to avoid chronic diseases.</p>"
+            "text": "<p>Follow our co-founder's <a href=\"https://michaelkummer.com/\" target=\"_blank\" title=\"https://michaelkummer.com/\">healthy living blog</a><strong> </strong>to learn more about how to optimize nutrition, exercise and sleep to avoid chronic diseases.</p>"
           }
         },
         "card_jr99rV": {
