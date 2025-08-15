@@ -1,0 +1,82 @@
+<style>
+  .best-sellers__wrapper {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    text-align: center;
+  }
+
+  .best-sellers__text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .best-sellers__description {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  .best-sellers__button {
+    background: #E16456;
+  }
+</style>
+
+<div class="best-sellers__wrapper">
+  <div class="best-sellers__text">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="best-sellers__description">{{ section.settings.description }}</div>
+    <a href="{{ section.settings.button_link }}" class="primary-button best-sellers__button">
+      {{- section.settings.button_label -}}
+    </a>
+  </div>
+
+  <div class="best-sellers__image">
+    <img src="{{ section.settings.best_seller_image | img_url: 'master' }}">
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Best Sellers",
+  "tag": "section",
+  "class": "best-sellers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Shop Best Sellers"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Section Description",
+      "default": "<p>Our animal-based supplements provide highly-bioavailable vitamins, minerals, coenzymes, and peptides for optimal health and vitality.</p>"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "best_seller_image",
+      "label": "Best Seller Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Best Sellers",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
