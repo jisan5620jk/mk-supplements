@@ -141,5 +141,6 @@ p {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  text-transform: uppercase;
   transition: background .2s ease, color .2s ease, transform .05s ease;
 }
