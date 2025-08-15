@@ -16,7 +16,7 @@
   class="supplements isos2 {% if section.settings.enable_boxed_section %}boxed-section{% endif %}"
 >
   {%- if section.settings.heading != blank -%}
-    <h2 class="title">{{ section.settings.heading }}</h2>
+    <h2 class="section-title">{{ section.settings.heading }}</h2>
   {%- endif -%}
   {%- if section.settings.subheading != blank -%}
     <p class="subtitle">{{ section.settings.subheading }}</p>
@@ -78,10 +78,12 @@
       background: {{ section.settings.section_bg }};
     }
     #supplements-{{ section_id }} .subtitle{
-      max-width: 900px;
+      max-width: 1026px;
       margin: 0 auto 28px;
       text-align: center;
-      opacity: .85;
+      font-family: 'Rubik';
+      font-weight: 400;
+      font-size: 18px;
     }
     #supplements-{{ section_id }} .slider-wrap{
       position: relative;
