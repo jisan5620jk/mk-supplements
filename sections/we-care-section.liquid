@@ -46,11 +46,22 @@
 
 <div class="we-care-section {% if section.settings.enable_boxed_section %}boxed-section{% endif %}">
   <div class="we-care-images">
-    <img src="{{ section.settings.left_image | img_url: 'master' }}" alt="We Care Left Image" class="we-care-img">
-    <img src="{{ section.settings.right_image | img_url: 'master' }}" alt="We Care Right Image" class="we-care-img">
+    <img
+      src="{{ section.settings.left_image | img_url: 'master' }}"
+      draggable="false"
+      alt="We Care Left Image"
+      class="we-care-img"
+    >
+    <img
+      src="{{ section.settings.right_image | img_url: 'master' }}"
+      draggable="false"
+      alt="We Care Right Image"
+      class="we-care-img"
+    >
     <img
       src="{{ section.settings.image_shape | img_url: 'master' }}"
       alt="We Care Image Shape"
+      draggable="false"
       class="we-care-img-shape"
     >
   </div>
