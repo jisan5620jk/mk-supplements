@@ -6,7 +6,7 @@
 @import url("https://fonts.cdnfonts.com/css/saaseriesadot");
 
 /* ==== HvDTrial_Americane ==== */
-@import url("https://fonts.cdnfonts.com/css/hvdtrial-americane-condensed");
+@import url("https://fonts.cdnfonts.com/css/hvdtrial-fonnts.com-Americane-Condensed");
 
 /* ==== NEW KANSAS ==== */
 @font-face {
@@ -112,56 +112,56 @@
 /* Condensed variants */
 @font-face {
   font-family: "Americane Cond";
-  src: url("Americane-Cond.otf") format("opentype");
+  src: url("fonnts.com-Americane-Cond.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("Americane-Cond-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane-Cond-Italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("Americane-Cond-Light.otf") format("opentype");
+  src: url("fonnts.com-Americane-Cond-Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("Americane-Cond-Light-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane-Cond-Light-Italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("Americane-Cond-Bold.otf") format("opentype");
+  src: url("fonnts.com-Americane-Cond-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("Americane-Cond-Bold-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane-Cond-Bold-Italic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("Americane-Cond-Black.otf") format("opentype");
+  src: url("fonnts.com-Americane-Cond-Black.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Americane Cond";
-  src: url("Americane-Cond-Black-Italic.otf") format("opentype");
+  src: url("fonnts.com-Americane-Cond-Black-Italic.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
 }
