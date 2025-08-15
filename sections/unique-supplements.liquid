@@ -65,12 +65,13 @@
 
   .unique-supplements-feature {
     padding: 20px 120px;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
   }
 
   @media screen and (max-width: 1023px) {
     .unique-supplements-feature {
+        display: inline-flex;
         animation: marquee var(--marquee-speed, 40s) linear infinite;
     }
   }
