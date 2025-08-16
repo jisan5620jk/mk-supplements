@@ -15,10 +15,8 @@
     flex: 1;
     min-width: 280px;
   }
-  .join-tribe__title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+  .section-title {
+    color: white;
   }
   .join-tribe__text {
     font-size: 1rem;
@@ -72,7 +70,7 @@
     <!-- Left Content -->
     <div class="join-tribe__content">
       {% if section.settings.heading != blank %}
-        <h2 class="join-tribe__title">{{ section.settings.heading }}</h2>
+        <h2 class="section-title">{{ section.settings.heading }}</h2>
       {% endif %}
 
       {% if section.settings.subtext != blank %}
