@@ -315,26 +315,17 @@
     },
     "join_tribe_Vwyadm": {
       "type": "join-tribe",
-      "blocks": {
-        "image_qDTQPE": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/temp_mockups_1_1.png"
-          }
-        }
-      },
-      "block_order": [
-        "image_qDTQPE"
-      ],
       "name": "Join Our Tribe",
       "settings": {
+        "enable_boxed_section": true,
         "heading": "Join our tribe",
         "subtext": "Get 10% off your next order plus early access to special sales events. We promise to send emails you'll love!",
         "form_action": "/",
         "first_name_placeholder": "First name",
         "email_placeholder": "email",
         "button_label": "Join Free & Save",
-        "bg_color": "#e06250"
+        "bg_color": "#e06250",
+        "image": "shopify://shop_images/temp_mockups_1_1.png"
       }
     }
   },
