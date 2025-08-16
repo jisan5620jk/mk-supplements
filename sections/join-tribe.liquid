@@ -1,0 +1,193 @@
+{% comment %}
+  Join Our Tribe Section
+  Dynamic Shopify Section with Email Signup Form
+{% endcomment %}
+
+<section class="join-tribe" style="background-color: {{ section.settings.bg_color }};">
+  <div class="join-tribe__inner">
+    <!-- Left Content -->
+    <div class="join-tribe__content">
+      {% if section.settings.heading != blank %}
+        <h2 class="join-tribe__title">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.subtext != blank %}
+        <p class="join-tribe__text">{{ section.settings.subtext }}</p>
+      {% endif %}
+
+      <!-- Signup Form -->
+      <form method="post" action="{{ section.settings.form_action }}" class="join-tribe__form">
+        <input
+          type="text"
+          name="first_name"
+          placeholder="{{ section.settings.first_name_placeholder }}"
+          class="join-tribe__input"
+        >
+        <input
+          type="email"
+          name="email"
+          placeholder="{{ section.settings.email_placeholder }}"
+          class="join-tribe__input"
+        >
+        <button type="submit" class="join-tribe__button">
+          {{ section.settings.button_label }}
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Images -->
+    <div class="join-tribe__images">
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank %}
+          <div class="join-tribe__image">
+            <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt | escape }}">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .join-tribe {
+    padding: 60px 5%;
+    color: #fff;
+  }
+  .join-tribe__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .join-tribe__content {
+    flex: 1;
+    min-width: 280px;
+  }
+  .join-tribe__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .join-tribe__text {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  .join-tribe__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .join-tribe__input {
+    flex: 1;
+    min-width: 180px;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1rem;
+  }
+  .join-tribe__button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .join-tribe__button:hover {
+    background: #333;
+  }
+  .join-tribe__images {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .join-tribe__image img {
+    max-width: 140px;
+    height: auto;
+  }
+  @media(max-width: 768px) {
+    .join-tribe__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+    .join-tribe__form {
+      justify-content: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Join Our Tribe",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join our tribe"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Get 10% off your next order plus early access to special sales events. We promise to send emails you'll love!"
+    },
+    {
+      "type": "url",
+      "id": "form_action",
+      "label": "Form Action URL",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "first_name_placeholder",
+      "label": "First Name Placeholder",
+      "default": "First name"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email Placeholder",
+      "default": "email"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Join Free & Save"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#e06250"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Product Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Upload Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Join Our Tribe",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
