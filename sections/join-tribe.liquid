@@ -51,15 +51,6 @@
     background: #333;
   }
   .join-tribe__images {
-    display: flex;
-    gap: 15px;
-    flex: 1;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .join-tribe__image img {
-    max-width: 140px;
-    height: auto;
   }
   @media(max-width: 768px) {
     .join-tribe__inner {
@@ -109,7 +100,7 @@
 
     <!-- Right Images -->
     <div class="join-tribe__images">
-      {% if block.settings.image != blank %}
+      {% if section.settings.image != blank %}
         <div class="join-tribe__image">
           <img src="{{ section.settings.image | img_url: master }}" alt="{{ section.settings.image.alt | escape }}">
         </div>
