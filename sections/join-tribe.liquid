@@ -1,53 +1,3 @@
-{% comment %}
-  Join Our Tribe Section
-  Dynamic Shopify Section with Email Signup Form
-{% endcomment %}
-
-<section class="join-tribe" style="background-color: {{ section.settings.bg_color }};">
-  <div class="join-tribe__inner">
-    <!-- Left Content -->
-    <div class="join-tribe__content">
-      {% if section.settings.heading != blank %}
-        <h2 class="join-tribe__title">{{ section.settings.heading }}</h2>
-      {% endif %}
-
-      {% if section.settings.subtext != blank %}
-        <p class="join-tribe__text">{{ section.settings.subtext }}</p>
-      {% endif %}
-
-      <!-- Signup Form -->
-      <form method="post" action="{{ section.settings.form_action }}" class="join-tribe__form">
-        <input
-          type="text"
-          name="first_name"
-          placeholder="{{ section.settings.first_name_placeholder }}"
-          class="join-tribe__input"
-        >
-        <input
-          type="email"
-          name="email"
-          placeholder="{{ section.settings.email_placeholder }}"
-          class="join-tribe__input"
-        >
-        <button type="submit" class="join-tribe__button">
-          {{ section.settings.button_label }}
-        </button>
-      </form>
-    </div>
-
-    <!-- Right Images -->
-    <div class="join-tribe__images">
-      {% for block in section.blocks %}
-        {% if block.settings.image != blank %}
-          <div class="join-tribe__image">
-            <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt | escape }}">
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
 <style>
   .join-tribe {
     padding: 60px 5%;
@@ -122,10 +72,62 @@
   }
 </style>
 
+<section
+  class="join-tribe {% if section.settings.enable_boxed_section %}boxed-section{% endif %}"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="join-tribe__inner">
+    <!-- Left Content -->
+    <div class="join-tribe__content">
+      {% if section.settings.heading != blank %}
+        <h2 class="join-tribe__title">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.subtext != blank %}
+        <p class="join-tribe__text">{{ section.settings.subtext }}</p>
+      {% endif %}
+
+      <!-- Signup Form -->
+      <form method="post" action="{{ section.settings.form_action }}" class="join-tribe__form">
+        <input
+          type="text"
+          name="first_name"
+          placeholder="{{ section.settings.first_name_placeholder }}"
+          class="join-tribe__input"
+        >
+        <input
+          type="email"
+          name="email"
+          placeholder="{{ section.settings.email_placeholder }}"
+          class="join-tribe__input"
+        >
+        <button type="submit" class="join-tribe__button">
+          {{ section.settings.button_label }}
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Images -->
+    <div class="join-tribe__images">
+      {% if block.settings.image != blank %}
+        <div class="join-tribe__image">
+          <img src="{{ section.settings.image | img_url: master }}" alt="{{ section.settings.image.alt | escape }}">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
 {% schema %}
 {
   "name": "Join Our Tribe",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_boxed_section",
+      "label": "Enable Boxed Section",
+      "default": true
+    },
     {
       "type": "text",
       "id": "heading",
