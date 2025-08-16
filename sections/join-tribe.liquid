@@ -103,7 +103,7 @@
     <div class="join-tribe__images">
       {% if section.settings.image != blank %}
         <div class="join-tribe__image">
-          <img src="{{ section.settings.image | img_url: master }}" alt="{{ section.settings.image.alt | escape }}">
+          <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt | escape }}">
         </div>
       {% endif %}
     </div>
