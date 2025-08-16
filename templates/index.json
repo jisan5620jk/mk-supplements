@@ -312,6 +312,30 @@
         "button_label": "Shop Now",
         "best_seller_image": "shopify://shop_images/Supplements_1.png"
       }
+    },
+    "join_tribe_Vwyadm": {
+      "type": "join-tribe",
+      "blocks": {
+        "image_qDTQPE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/temp_mockups_1_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_qDTQPE"
+      ],
+      "name": "Join Our Tribe",
+      "settings": {
+        "heading": "Join our tribe",
+        "subtext": "Get 10% off your next order plus early access to special sales events. We promise to send emails you'll love!",
+        "form_action": "/",
+        "first_name_placeholder": "First name",
+        "email_placeholder": "email",
+        "button_label": "Join Free & Save",
+        "bg_color": "#e06250"
+      }
     }
   },
   "order": [
@@ -322,6 +346,7 @@
     "unique_supplements_FYDKCc",
     "service_section_NpGqkE",
     "we_care_section_67aCw3",
-    "best_sellers_GUh4Mn"
+    "best_sellers_GUh4Mn",
+    "join_tribe_Vwyadm"
   ]
 }
