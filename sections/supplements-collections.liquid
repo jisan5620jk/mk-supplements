@@ -59,7 +59,9 @@
 <section class="supplements-collections {% if section.settings.enable_boxed_section %}boxed-section{% endif %}">
   <div class="supplements-collections-header">
     <h2 class="section-title">{{ section.settings.section_title }}</h2>
-    <a href="{{ section.settings.shop_all_link }}" class="collections-link">{{ section.settings.all_product_btn }}</a>
+    <a href="{{ section.settings.shop_all_link }}" class="supplements-collections-link">
+      {{- section.settings.all_product_btn -}}
+    </a>
   </div>
   <div class="supplements-collections-grid">
     {% assign title_colors = '#3384FF,#EFB605,#EB7618,#F53891' | split: ',' %}
