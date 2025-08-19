@@ -117,12 +117,14 @@
 
     {% if section.settings.video_file != blank %}
       <video id="video-{{ section.id }}" controls>
-        <source src="{{ section.settings.video_file | asset_url }}" type="video/mp4">
+        {% for source in section.settings.video_file.sources %}
+          <source src="{{ source.url | asset_url }}" type="{{ source.mime_type }}">
+        {% endfor %}
         Your browser does not support the video tag.
       </video>
     {% elsif section.settings.video_url != blank %}
       <video id="video-{{ section.id }}" controls>
-        <source src="{{ section.settings.video_url | asset_url }}" type="video/mp4">
+        <source src="{{ section.settings.video_url | asset_url}}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     {% endif %}
