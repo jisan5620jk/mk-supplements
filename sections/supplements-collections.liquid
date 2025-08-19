@@ -1,8 +1,13 @@
 <style>
+  @media screen and (min-width: 1024px) {
+    .supplements-collections {
+      padding: 80px 86px;
+    }
+  }
+
   .supplements-collections {
     background: #000;
     color: #fff;
-    padding: 80px 86px;
   }
 
   .supplements-collections-header {
@@ -34,7 +39,7 @@
   .supplements-collections-grid {
     display: grid;
     grid-template-columns: repeat({{ section.settings.product_column }}, 1fr);
-    gap: 2rem;
+    gap: 24px;
   }
 
   .supplements-collection-card {
