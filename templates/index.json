@@ -90,25 +90,29 @@
         "product_8ztT4q": {
           "type": "product",
           "settings": {
-            "product": "long-dress-1"
+            "product": "long-dress-1",
+            "rating_text": "Rating 381"
           }
         },
         "product_FxNmWU": {
           "type": "product",
           "settings": {
-            "product": "long-dress-caro-line-4"
+            "product": "long-dress-caro-line-4",
+            "rating_text": "Rating 381"
           }
         },
         "product_ixBGQi": {
           "type": "product",
           "settings": {
-            "product": "leather-small-backpack"
+            "product": "leather-small-backpack",
+            "rating_text": "Rating 381"
           }
         },
         "product_aCFqGJ": {
           "type": "product",
           "settings": {
-            "product": "green-flower-shirt"
+            "product": "green-flower-shirt",
+            "rating_text": "Rating 381"
           }
         }
       },
@@ -124,7 +128,6 @@
         "heading": "Our pure & potent animal supplements",
         "subheading": "Modern farming has depleted soil quality, leaving most people deficient in essential micronutrients. Our animal-based supplements provide highly bioavailable vitamins, minerals, coenzymes, and peptides for optimal health and vitality.",
         "source": "manual",
-        "collection": "best-selling",
         "max_products": 12,
         "slides_desktop": 4,
         "slides_tablet": 2,
@@ -153,7 +156,7 @@
         "card_border": "#f0e3dd",
         "section_bg": "#ffffff",
         "container_max": 1200,
-        "padding_top": 40,
+        "padding_top": 108,
         "padding_bottom": 48
       }
     },
