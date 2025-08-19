@@ -71,7 +71,7 @@
       {%- endif -%}
       <span class="current">
         {%- if the_product.price_varies -%}
-          From {{ the_product.price_min | money }}
+          {{ the_product.price_min | money }}
         {%- else -%}
           {{ the_product.price | money }}
         {%- endif -%}
