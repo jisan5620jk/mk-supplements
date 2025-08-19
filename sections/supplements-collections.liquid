@@ -73,12 +73,15 @@
     position: relative;
   }
 
+  @media screen and (max-width: 9102px) {
+    .supplements-collections-slider {
+      padding: 0 0 70px;
+    }
+  }
+
   @media screen and (max-width: 991px) {
     .supplements-collections-grid {
       padding: 0 50px;
-    }
-    .supplements-collections-slider {
-      padding: 0 0 70px;
     }
     .supplements-collection-card {
       text-align: center;
@@ -220,7 +223,7 @@
           slidesPerView: {{ section.settings.slides_desktop }},
           spaceBetween: 24,
         },
-        1350: {
+        1199: {
           slidesPerView: {{ section.settings.slides_desktop_large }},
           spaceBetween: 24,
         }
