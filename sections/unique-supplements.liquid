@@ -63,13 +63,13 @@
         display: none;
     }
     .unique-supplements-feature {
-        display: inline-flex;
+        display: flex;
         animation: marquee var(--marquee-speed, 40s) linear infinite;
     }
   }
 
   .unique-supplements-feature-card {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 10px;
     justify-content: center;
@@ -160,11 +160,16 @@
     {% for row in (1..2) %}
       <div class="unique-supplements-feature" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
         {% for block in section.blocks %}
-          <span class="unique-supplements-feature-card">
-            <span class="unique-supplements-feature-card-content">
+          <div class="unique-supplements-feature-card">
+            <div class="unique-supplements-feature-card-icon">
+              {% if block.settings.icon %}
+                <img src="{{ block.settings.icon | img_url: 'master' }}" alt="{{ block.settings.label }}">
+              {% endif %}
+            </div>
+            <div class="unique-supplements-feature-card-content">
               <h4>{{ block.settings.label }}</h4>
-            </span>
-          </span>
+            </div>
+          </div>
         {% endfor %}
       </div>
     {% endfor %}
