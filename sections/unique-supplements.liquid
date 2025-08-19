@@ -64,26 +64,6 @@
         display: none;
     }
   }
-
-  @media screen and (max-width: 1023px) {
-    .unique-feature-desktop {
-        display: none;
-    }
-    .unique-supplements-feature {
-      display: inline-flex;
-      animation: marquee var(--marquee-speed, 40s) linear infinite;
-      white-space: nowrap;
-      gap: 20px;
-    }
-    .unique-supplements-feature {
-      gap: 20px;
-      white-space: nowrap;
-    }
-    .unique-supplements-feature-card-content h4 {
-      font-size: 22px;
-    }
-  }
-
   .unique-supplements-feature-card {
     display: inline-flex;
     align-items: center;
@@ -114,6 +94,26 @@
     color:#ffffff;
     margin: 0;
   }
+
+  @media screen and (max-width: 1023px) {
+    .unique-feature-desktop {
+        display: none;
+    }
+    .unique-supplements-feature {
+      display: inline-flex;
+      animation: marquee var(--marquee-speed, 40s) linear infinite;
+      white-space: nowrap;
+      gap: 20px;
+    }
+    .unique-supplements-feature {
+      gap: 20px;
+      white-space: nowrap;
+    }
+    .unique-supplements-feature-card-content h4 {
+      font-size: 22px;
+    }
+  }
+
 
   /* Marquee Animation */
   @keyframes marquee {
