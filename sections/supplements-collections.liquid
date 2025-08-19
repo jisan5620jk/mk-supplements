@@ -1,5 +1,5 @@
 <style>
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 992px) {
     .supplements-collections {
       padding: 80px 86px;
     }
@@ -30,6 +30,16 @@
     text-align: center;
     text-decoration: underline;
     transition: all .5s;
+    display: none;
+  }
+
+  @media screen and (min-width: 992px) {
+    .supplements-collections-link.destop {
+      display: block;
+    }
+    .supplements-collections-link.destop {
+      display: none;
+    }
   }
 
   .supplements-collections-link:hover {
@@ -71,7 +81,7 @@
 <section class="supplements-collections {% if section.settings.enable_boxed_section %}boxed-section{% endif %}">
   <div class="supplements-collections-header">
     <h2 class="section-title">{{ section.settings.section_title }}</h2>
-    <a href="{{ section.settings.shop_all_link }}" class="supplements-collections-link">
+    <a href="{{ section.settings.shop_all_link }}" class="supplements-collections-link desktop">
       {{- section.settings.all_product_btn -}}
     </a>
   </div>
@@ -103,6 +113,9 @@
       {% endif %}
     {% endfor %}
   </div>
+  <a href="{{ section.settings.shop_all_link }}" class="supplements-collections-link mobile">
+    {{- section.settings.all_product_btn -}}
+  </a>
 </section>
 
 {% schema %}
