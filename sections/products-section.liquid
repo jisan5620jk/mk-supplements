@@ -96,12 +96,20 @@
       #supplements-{{ section_id }} .slider-wrap{
         padding: 0 86px;
       }
-    }
-    @media screen and (max-width: 389px) {
       #supplements-{{ section_id }} .description{
         max-width: 360px;
         margin: 26px auto 56px;
       }
+    }
+    @media screen and (max-width: 575px) {
+      #supplements-{{ section_id }} .description{
+        max-width: 360px;
+      }
+      #supplements-{{ section_id }} .slider-wrap{
+        padding: 0 60px;
+      }
+    }
+    @media screen and (max-width: 389px) {
       #supplements-{{ section_id }} .slider-wrap{
         padding: 0 60px;
       }
