@@ -1,122 +1,167 @@
 <style>
-  @media screen and (min-width: 992px) {
-    .supplements-collections {
-      padding: 80px 86px;
+    @media screen and (min-width: 992px) {
+      .supplements-collections {
+        padding: 80px 86px;
+      }
     }
-  }
-  @media screen and (max-width: 991px) {
-    .supplements-collections {
-      padding: 36px 0;
+    @media screen and (max-width: 991px) {
+      .supplements-collections {
+        padding: 36px 0;
+      }
     }
-  }
 
-  .supplements-collections {
-    background: #000;
-    color: #fff;
-  }
+    .supplements-collections {
+      background: #000;
+      color: #fff;
+    }
 
-  .supplements-collections-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 46px;
-  }
-
-  @media screen and (max-width: 991px) {
     .supplements-collections-header {
-      justify-content: center;
-      margin-bottom: 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 46px;
     }
-  }
 
-  .supplements-collections-header h2 {
-    color: #fff;
-  }
-
-  .supplements-collections-link {
-    color: #fff;
-    font-family: "SaaSeriesEDOT";
-    font-size: 24px;
-    font-weight: 400;
-    text-align: center;
-    text-decoration: underline;
-    transition: all .5s;
-    display: none;
-  }
-
-  @media screen and (min-width: 992px) {
-    .supplements-collections-link.desktop {
-      display: block;
+    @media screen and (max-width: 991px) {
+      .supplements-collections-header {
+        justify-content: center;
+        margin-bottom: 34px;
+      }
     }
-    .supplements-collections-link.mobile {
+
+    .supplements-collections-header h2 {
+      color: #fff;
+    }
+
+    .supplements-collections-link {
+      color: #fff;
+      font-family: "SaaSeriesEDOT";
+      font-size: 24px;
+      font-weight: 400;
+      text-align: center;
+      text-decoration: underline;
+      transition: all .5s;
       display: none;
     }
-  }
 
-  .supplements-collections-link.mobile {
-    display: block;
-    font-size: 16px;
-  }
-
-  .supplements-collections-link:hover {
-    color: #e86452;
-  }
-
-  /* Swiper Container */
-  .supplements-collections-slider {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .supplements-collections-slider .swiper-wrapper {
-    overflow: hidden;
-  }
-
-  @media screen and (max-width: 991px) {
-    .supplements-collections-slider {
-      padding: 0 50px 50px;
+    @media screen and (min-width: 992px) {
+      .supplements-collections-link.desktop {
+        display: block;
+      }
+      .supplements-collections-link.mobile {
+        display: none;
+      }
     }
+
+    .supplements-collections-link.mobile {
+      display: block;
+      font-size: 16px;
+    }
+
+    .supplements-collections-link:hover {
+      color: #e86452;
+    }
+
+    /* Swiper Container */
+    .supplements-collections-slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .supplements-collections-slider .swiper-wrapper {
+      overflow: hidden;
+    }
+
+    @media screen and (max-width: 991px) {
+      .supplements-collections-slider {
+        padding: 0 50px 50px;
+      }
+      .supplements-collection-card {
+        text-align: center;
+      }
+      .supplements-collection-card h3 {
+        font-size: 24px;
+      }
+    }
+
+    @media screen and (max-width: 380px) {
+      .supplements-collections-slider {
+        padding: 0 24px 50px;
+      }
+      .supplements-collection-card h3 {
+        font-size: 22px;
+      }
+    }
+
     .supplements-collection-card {
-      text-align: center;
+      text-decoration: none;
     }
+
+    .supplements-collection-image {
+      background: linear-gradient(180deg, #39332E 0%, #000000 100%);
+      border-radius: 24px;
+      padding: 36px 0;
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    .supplements-collection-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     .supplements-collection-card h3 {
-      font-size: 24px;
+      font-family: "SaaSeriesEDOT";
+      font-weight: 400;
+      font-size: 26px;
+      margin: 22px 0 0;
     }
+
+    /* Base bullet: circular outline */
+  .supplements-collections-slider .swiper-pagination-bullet {
+    width: 10px;            /* outer diameter of the ring */
+    height: 10px;
+    border-radius: 50%;
+    background: transparent; /* default non-active is transparent */
+    border: 2px solid rgba(255,255,255,0.9); /* ring color */
+    box-sizing: border-box;
+    opacity: 1;             /* keep visible */
+    transition: background-color 200ms ease, transform 200ms ease, border-color 200ms ease;
+    transform: scale(1);
   }
 
-  @media screen and (max-width: 380px) {
-    .supplements-collections-slider {
-      padding: 0 24px 50px;
-    }
-    .supplements-collection-card h3 {
-      font-size: 22px;
-    }
+  /* Active bullet: filled circle (slightly larger inner fill or same size) */
+  .supplements-collections-slider .swiper-pagination-bullet-active {
+    background: rgba(255,255,255,0.95); /* filled color */
+    border-color: rgba(255,255,255,0.95); /* unify border with fill */
+    transform: scale(1.05); /* subtle scale to emphasize */
   }
 
-  .supplements-collection-card {
-    text-decoration: none;
+  /* If you prefer a hollow ring with a smaller filled dot inside for the active state */
+  .supplements-collections-slider .swiper-pagination-bullet--custom {
+    position: relative;
+    border: 2px solid rgba(255,255,255,0.9);
+    background: transparent;
+  }
+  .supplements-collections-slider .swiper-pagination-bullet--custom.swiper-pagination-bullet-active {
+    background: transparent; /* keep outer ring transparent */
+  }
+  .supplements-collections-slider .swiper-pagination-bullet--custom.swiper-pagination-bullet-active::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 6px;              /* inner filled dot size */
+    height: 6px;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.95);
+    border-radius: 50%;
   }
 
-  .supplements-collection-image {
-    background: linear-gradient(180deg, #39332E 0%, #000000 100%);
-    border-radius: 24px;
-    padding: 36px 0;
-    width: 100%;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-  }
-  .supplements-collection-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .supplements-collection-card h3 {
-    font-family: "SaaSeriesEDOT";
-    font-weight: 400;
-    font-size: 26px;
-    margin: 22px 0 0;
+  /* Make sure bullets are reachable/clickable on touch */
+  .supplements-collections-slider .swiper-pagination-bullet {
+    touch-action: manipulation;
   }
 </style>
 
