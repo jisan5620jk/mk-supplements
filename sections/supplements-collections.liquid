@@ -73,7 +73,7 @@
     position: relative;
   }
 
-  @media screen and (max-width: 9102px) {
+  @media screen and (max-width: 1023px) {
     .supplements-collections-slider {
       padding: 0 0 70px;
     }
@@ -203,7 +203,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     new Swiper(".supplements-collections-slider", {
-      slidesPerView: {{ section.settings.slides_desktop }},
+      slidesPerView: {{ section.settings.slides_desktop_large }},
       spaceBetween: 24,
       loop: true,
       pagination: {
