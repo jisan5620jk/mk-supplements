@@ -87,12 +87,6 @@
     "products_section_idhCmp": {
       "type": "products-section",
       "blocks": {
-        "product_CbGeeW": {
-          "type": "product",
-          "settings": {
-            "product": "denim-short"
-          }
-        },
         "product_8ztT4q": {
           "type": "product",
           "settings": {
@@ -111,12 +105,6 @@
             "product": "leather-small-backpack"
           }
         },
-        "product_LMe88B": {
-          "type": "product",
-          "settings": {
-            "product": "leather-small-backpack"
-          }
-        },
         "product_aCFqGJ": {
           "type": "product",
           "settings": {
@@ -125,11 +113,9 @@
         }
       },
       "block_order": [
-        "product_CbGeeW",
         "product_8ztT4q",
         "product_FxNmWU",
         "product_ixBGQi",
-        "product_LMe88B",
         "product_aCFqGJ"
       ],
       "name": "Products Slider",
