@@ -261,7 +261,7 @@
           pauseOnMouseEnter: {{ section.settings.pause_on_hover | json }}
           } : false,
           breakpoints: {
-          0:   { slidesPerView: {{ section.settings.slides_mobile | default: 1 }}, spaceBetween: {{ section.settings.space_between_mobile | default: section.settings.space_between }} },
+          320:   { slidesPerView: {{ section.settings.slides_mobile | default: 1 }}, spaceBetween: {{ section.settings.space_between_mobile | default: section.settings.space_between }} },
           767: { slidesPerView: {{ section.settings.slides_tablet | default: 2 }}, spaceBetween: {{ section.settings.space_between_tablet | default: section.settings.space_between }} },
           1023: { slidesPerView: {{ section.settings.slides_desktop | default: 3 }}, spaceBetween: {{ section.settings.space_between | default: 24 }} }
           1199: { slidesPerView: {{ section.settings.slides_desktop_large | default: 4 }}, spaceBetween: {{ section.settings.space_between | default: 24 }} }
