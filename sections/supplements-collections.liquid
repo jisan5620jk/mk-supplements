@@ -126,7 +126,7 @@
     height: 18px;
     border-radius: 50%;
     background: transparent;
-    border: 2px solid rgba(255,255,255,0.9);
+    border: 1px solid #ffffff;
     box-sizing: border-box;
     opacity: 1;
     transition: background-color 200ms ease, transform 200ms ease, border-color 200ms ease;
@@ -138,22 +138,11 @@
     border-color: rgba(255,255,255,0.95);
     transform: scale(1.05);
   }
-  .supplements-collections-slider .swiper-pagination-bullet--custom.swiper-pagination-bullet-active {
-    background: transparent;
-  }
-  .supplements-collections-slider .swiper-pagination-bullet--custom.swiper-pagination-bullet-active::after {
-    content: "";
-    position: absolute;
-    inset: 50% auto auto 50%;
+
+  .supplements-collections-slider .swiper-pagination-bullet-active:after {
     width: 6px;
     height: 6px;
-    transform: translate(-50%, -50%);
-    background: rgba(255,255,255,0.95);
-    border-radius: 50%;
-  }
-
-  .supplements-collections-slider .swiper-pagination-bullet {
-    touch-action: manipulation;
+    background: 6px;
   }
 </style>
 
