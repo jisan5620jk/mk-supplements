@@ -254,6 +254,7 @@
         "enable_boxed_section": true,
         "section_title": "What makes our supplements unique?",
         "poster_image": "shopify://shop_images/video-thumbnail_1.jpg",
+        "video_file": "shopify://files/videos/video-3.mp4",
         "video_url": "",
         "marquee_speed": 40
       }
