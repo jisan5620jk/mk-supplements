@@ -62,6 +62,17 @@
     .unique-feature-desktop {
         display: none;
     }
+    .unique-feature-mobile {
+      display: flex;
+      white-space: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 12px;
+      padding: 8px;
+    }
+    .unique-feature-mobile > * {
+      flex: 0 0 auto;
+    }
     .unique-supplements-feature {
         display: inline-flex;
         animation: marquee var(--marquee-speed, 40s) linear infinite;
