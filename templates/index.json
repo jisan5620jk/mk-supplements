@@ -208,8 +208,7 @@
         "product_column": 4,
         "section_title": "Shop by Health Goals",
         "shop_all_link": "shopify://collections",
-        "all_product_btn": "SHOP ALL HEALTH GOALS",
-        "image_ratio": "4 / 3"
+        "all_product_btn": "SHOP ALL HEALTH GOALS"
       }
     },
     "unique_supplements_FYDKCc": {
@@ -253,7 +252,7 @@
       "name": "Unique Supplements Video",
       "settings": {
         "enable_boxed_section": true,
-        "section_title": "Unlock Peak Health",
+        "section_title": "What makes our supplements unique?",
         "poster_image": "shopify://shop_images/video-thumbnail_1.jpg",
         "video_url": "",
         "marquee_speed": 40
