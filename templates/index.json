@@ -145,7 +145,8 @@
         "subheading": "Modern farming has depleted soil quality, leaving most people deficient in essential micronutrients. Our animal-based supplements provide highly bioavailable vitamins, minerals, coenzymes, and peptides for optimal health and vitality.",
         "source": "manual",
         "max_products": 12,
-        "slides_desktop": 4,
+        "slides_desktop_large": 4,
+        "slides_desktop": 3,
         "slides_tablet": 2,
         "slides_mobile": 1,
         "space_between": 24,
@@ -221,7 +222,10 @@
       "name": "Supplements Collections",
       "settings": {
         "enable_boxed_section": true,
-        "product_column": 4,
+        "slides_mobile": 1,
+        "slides_tablet": 2,
+        "slides_desktop": 3,
+        "slides_desktop_large": 4,
         "section_title": "Shop by Health Goals",
         "shop_all_link": "shopify://collections",
         "all_product_btn": "SHOP ALL HEALTH GOALS"
