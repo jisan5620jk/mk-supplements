@@ -281,7 +281,6 @@
         { "value": "collection", "label": "Use a collection" }
       ]
     },
-    { "type": "collection", "id": "collection", "label": "Collection (when source = collection)" },
     {
       "type": "range",
       "id": "max_products",
@@ -424,7 +423,10 @@
       "type": "product",
       "name": "Product",
       "limit": 24,
-      "settings": [{ "type": "product", "id": "product", "label": "Product" }]
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "rating_text", "label": "Product rating text", "default": "Rating 381" }
+      ]
     }
   ],
   "presets": [{ "name": "Products Slider", "category": "Products" }]
