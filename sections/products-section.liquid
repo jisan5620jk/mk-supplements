@@ -63,15 +63,15 @@
       --card-border: {{ section.settings.card_border }};
       --space-between: {{ section.settings.space_between }};
     }
-    @media screen and (min-width: 1024px) {
-      #supplements-{{ section_id }}{
-        padding: 120px 86px 108px;
-      }
-    }
     #supplements-{{ section_id }}{
       color: var(--text-color);
       background: {{ section.settings.section_bg }};
       padding: 38px 0 40px;
+    }
+    @media screen and (min-width: 1024px) {
+      #supplements-{{ section_id }}{
+        padding: var(--pad-t) 86px var(--pad-b);
+      }
     }
     #supplements-{{ section_id }} .section-title{
       color: #4C2B1D;
