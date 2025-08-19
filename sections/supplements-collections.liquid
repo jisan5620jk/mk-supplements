@@ -172,6 +172,7 @@
 </section>
 
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
   new Swiper(".supplements-collections-slider", {
     slidesPerView: {{ section.settings.slides_desktop }},
     spaceBetween: 24,
@@ -202,7 +203,7 @@
         spaceBetween: 24,
       }
     }
-  });
+  });)}
 </script>
 
 {% schema %}
