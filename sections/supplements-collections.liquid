@@ -126,26 +126,32 @@
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".supplements-collections-slider", {
-      slidesPerView: {{ section.settings.product_column }},
-      spaceBetween: 24,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+  new Swiper(".supplements-collections-slider", {
+    slidesPerView: {{ section.settings.slides_desktop }},
+    spaceBetween: 24,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: {{ section.settings.slides_mobile }},
+        spaceBetween: 16,
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+      576: {
+        slidesPerView: {{ section.settings.slides_tablet }},
+        spaceBetween: 20,
       },
-      breakpoints: {
-        320: { slidesPerView: 1.2, spaceBetween: 16 },
-        576: { slidesPerView: 2, spaceBetween: 16 },
-        768: { slidesPerView: 3, spaceBetween: 20 },
-        992: { slidesPerView: {{ section.settings.product_column }}, spaceBetween: 24 },
-      },
-    });
+      992: {
+        slidesPerView: {{ section.settings.slides_desktop }},
+        spaceBetween: 24,
+      }
+    }
   });
 </script>
 
@@ -161,11 +167,29 @@
     },
     {
       "type": "range",
-      "id": "product_column",
+      "id": "slides_mobile",
       "min": 1,
       "max": 6,
       "step": 1,
-      "label": "Columns / Slides Per View",
+      "label": "Slides Per View (Mobile)",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "slides_tablet",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Slides Per View (Tablet)",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Slides Per View (Desktop)",
       "default": 4
     },
     {
