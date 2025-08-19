@@ -41,10 +41,6 @@
     margin-bottom: 0.5rem;
   }
 
-  .supplements-collection-card:hover {
-    transform: scale(1.03);
-  }
-
   .supplements-collection-card h3 {
     font-family: "SaaSeriesEDOT";
     font-weight: 400;
@@ -102,7 +98,7 @@
               {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
             {% endif %}
           </div>
-          <h3>{{ collection.title }}</h3>
+          <h3 style="color: {{ block.settings.title_color }}">{{ collection.title }}</h3>
         </a>
       {% endif %}
     {% endfor %}
@@ -172,6 +168,12 @@
           "type": "image_picker",
           "id": "collection_img",
           "label": "Custom Image (optional)"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#F53891"
         }
       ]
     }
