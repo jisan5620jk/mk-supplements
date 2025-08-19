@@ -142,29 +142,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 4px;
       margin-top: 4px;
-    }
-    #supplements-{{ section_id }} .stars{
-      position: relative;
-      display: inline-block;
-      width: 88px;
-      height: 16px;
-      line-height: 1;
-    }
-    #supplements-{{ section_id }} .stars .base,
-    #supplements-{{ section_id }} .stars .fill{
-      position: absolute; inset: 0;
-      background: linear-gradient(90deg, #d5d5d5 0 0) left/20% 100% repeat-x;
-      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="16" viewBox="0 0 100 16"><text x="0" y="14" font-size="16">★★★★★</text></svg>') center/100% 100%;
-              mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="16" viewBox="0 0 100 16"><text x="0" y="14" font-size="16">★★★★★</text></svg>') center/100% 100%;
-    }
-    #supplements-{{ section_id }} .stars .fill{
-      background: linear-gradient(90deg, var(--star-color) 0 0) left/20% 100% repeat-x;
-      width: calc((var(--rating) / var(--rating-max)) * 100%);
-    }
-    #supplements-{{ section_id }} .rating small{
-      opacity: .75;
     }
 
     /* Buttons */
@@ -172,6 +151,7 @@
       background: var(--btn-bg);
       color: var(--btn-color);
       max-width: 100%;
+      font-weight: 400;
     }
     #supplements-{{ section_id }} .primary-button:hover{
       background: var(--btn-bg-hover);
@@ -206,7 +186,7 @@
     /* Pagination bullets */
     #supplements-{{ section_id }} .swiper-pagination{
       position: static;
-      margin-top: 16px;
+      margin-top: 16px;6+
     }
     #supplements-{{ section_id }} .swiper-pagination-bullet{
       background: rgba(0,0,0,.2);
