@@ -28,7 +28,7 @@ a {
   }
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 389px) {
   .section-title {
     font-size: 26px;
   }
