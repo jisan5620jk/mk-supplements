@@ -65,8 +65,11 @@
 
   /* Swiper Container */
   .supplements-collections-slider {
-    position: relative;
     overflow: hidden;
+  }
+
+  .supplements-collections-slider {
+    position: relative;
   }
 
   @media screen and (max-width: 991px) {
@@ -82,7 +85,7 @@
   }
 
   @media screen and (max-width: 380px) {
-    .supplements-collections-slider {
+    .supplements-collections-grid {
       padding: 0 24px 50px;
     }
     .supplements-collection-card h3 {
@@ -114,7 +117,6 @@
     font-size: 26px;
     margin: 22px 0 0;
   }
-
 
   .supplements-collections-slider .swiper-pagination-bullet {
     width: 10px;
@@ -167,41 +169,41 @@
   </div>
 
   <!-- Swiper Slider -->
-  <div class="swiper supplements-collections-slider">
-    <div class="swiper-wrapper">
-      {% for block in section.blocks %}
-        {% assign collection = collections[block.settings.collection] %}
-        {% if collection %}
-          <div class="swiper-slide">
-            <a href="{{ collection.url }}" class="supplements-collection-card">
-              <div class="supplements-collection-image">
-                {% if block.settings.collection_img %}
-                  <img
-                    src="{{ block.settings.collection_img | img_url: 'master' }}"
-                    alt="{{ collection.title | escape }}"
-                    loading="lazy"
-                  >
-                {% elsif collection.image %}
-                  <img
-                    src="{{ collection.image | img_url: 'master' }}"
-                    alt="{{ collection.title | escape }}"
-                    loading="lazy"
-                  >
-                {% else %}
-                  {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
-                {% endif %}
-              </div>
-              <h3 style="color: {{ block.settings.title_color }}">{{ collection.title }}</h3>
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
+  <div class="supplements-collection-grid">
+    <div class="swiper supplements-collections-slider">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign collection = collections[block.settings.collection] %}
+          {% if collection %}
+            <div class="swiper-slide">
+              <a href="{{ collection.url }}" class="supplements-collection-card">
+                <div class="supplements-collection-image">
+                  {% if block.settings.collection_img %}
+                    <img
+                      src="{{ block.settings.collection_img | img_url: 'master' }}"
+                      alt="{{ collection.title | escape }}"
+                      loading="lazy"
+                    >
+                  {% elsif collection.image %}
+                    <img
+                      src="{{ collection.image | img_url: 'master' }}"
+                      alt="{{ collection.title | escape }}"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
+                  {% endif %}
+                </div>
+                <h3 style="color: {{ block.settings.title_color }}">{{ collection.title }}</h3>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
 
-    <!-- Pagination & Navigation -->
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+      <!-- Pagination & Navigation -->
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 
   <a href="{{ section.settings.shop_all_link }}" class="supplements-collections-link mobile">
@@ -218,10 +220,6 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
       },
       breakpoints: {
         320: {
