@@ -114,13 +114,29 @@
             "product": "green-flower-shirt",
             "rating_text": "Rating 381"
           }
+        },
+        "product_9DKtdQ": {
+          "type": "product",
+          "settings": {
+            "product": "black-shorts-with-belt",
+            "rating_text": "Rating 381"
+          }
+        },
+        "product_yHRLNJ": {
+          "type": "product",
+          "settings": {
+            "product": "slogan-hat",
+            "rating_text": "Rating 381"
+          }
         }
       },
       "block_order": [
         "product_8ztT4q",
         "product_FxNmWU",
         "product_ixBGQi",
-        "product_aCFqGJ"
+        "product_aCFqGJ",
+        "product_9DKtdQ",
+        "product_yHRLNJ"
       ],
       "name": "Products Slider",
       "settings": {
