@@ -107,7 +107,6 @@
     display: inline-block;
     font-family: "SaaSeriesEDOT";
     font-weight: 400;
-    font-size: 18px;
     font-size: 16px;
     color:#ffffff;
     margin: 0;
@@ -144,7 +143,12 @@
 
     <div class="play-button" id="playButton-{{ section.id }}"></div>
 
-    {% if section.settings.video_url %}
+    {% if section.settings.video_file != blank %}
+      <video id="video-{{ section.id }}" controls>
+        <source src="{{ section.settings.video_file | video_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% elsif section.settings.video_url != blank %}
       <video id="video-{{ section.id }}" controls>
         <source src="{{ section.settings.video_url }}" type="video/mp4">
         Your browser does not support the video tag.
@@ -208,6 +212,7 @@
     if (playBtn) playBtn.addEventListener('click', playVideo);
   });
 </script>
+
 {% schema %}
 {
   "name": "Unique Supplements",
@@ -232,9 +237,14 @@
       "label": "Video Poster"
     },
     {
+      "type": "video",
+      "id": "video_file",
+      "label": "Upload Video"
+    },
+    {
       "type": "url",
       "id": "video_url",
-      "label": "Video URL"
+      "label": "Video URL (optional)"
     },
     {
       "type": "range",
