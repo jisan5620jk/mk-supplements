@@ -145,12 +145,12 @@
 
     {% if section.settings.video_file != blank %}
       <video id="video-{{ section.id }}" controls>
-        <source src="{{ section.settings.video_file | video_url }}" type="video/mp4">
+        <source src="{{ section.settings.video_file | asset_url }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     {% elsif section.settings.video_url != blank %}
       <video id="video-{{ section.id }}" controls>
-        <source src="{{ section.settings.video_url }}" type="video/mp4">
+        <source src="{{ section.settings.video_url | asset_url }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     {% endif %}
@@ -196,12 +196,10 @@
   document.addEventListener('DOMContentLoaded', function () {
     const id = '{{ section.id }}';
     const poster = document.getElementById('videoPoster-' + id);
-    const playBtn = document.getElementById('playButton-' + id);
     const video = document.getElementById('video-' + id);
 
     function playVideo() {
       if (poster) poster.style.display = 'none';
-      if (playBtn) playBtn.style.display = 'none';
       if (video) {
         video.style.display = 'block';
         video.play();
@@ -209,7 +207,6 @@
     }
 
     if (poster) poster.addEventListener('click', playVideo);
-    if (playBtn) playBtn.addEventListener('click', playVideo);
   });
 </script>
 
