@@ -92,9 +92,7 @@
       height: auto;
     }
     #supplements-{{ section_id }} .product-card{
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
+      background: transparent;
       text-align: center;
       height: 100%;
       display: grid;
@@ -173,6 +171,7 @@
     #supplements-{{ section_id }} .primary-button{
       background: var(--btn-bg);
       color: var(--btn-color);
+      max-width: 100%;
     }
     #supplements-{{ section_id }} .primary-button:hover{
       background: var(--btn-bg-hover);
