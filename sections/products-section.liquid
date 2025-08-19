@@ -88,18 +88,24 @@
       font-size: 18px;
       color: #4C2B1D;
     }
-    @media screen and (max-width: 575px) {
-      #supplements-{{ section_id }} .description{
-        max-width: 360px;
-      }
+    #supplements-{{ section_id }} .slider-wrap{
+      position: relative;
     }
     @media screen and (max-width: 1023px) {
       #supplements-{{ section_id }} .product-slider-{{ section_id }}{
         padding: 0 86px;
       }
+      #supplements-{{ section_id }} .slider-wrap{
+        padding: 0 24px;
+      }
     }
-    #supplements-{{ section_id }} .slider-wrap{
-      position: relative;
+    @media screen and (max-width: 575px) {
+      #supplements-{{ section_id }} .description{
+        max-width: 360px;
+      }
+      #supplements-{{ section_id }} .product-slider-{{ section_id }}{
+        padding: 0 26px;
+      }
     }
 
     /* Card */
