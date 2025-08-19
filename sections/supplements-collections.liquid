@@ -1,15 +1,4 @@
 <style>
-  @media screen and (min-width: 992px) {
-    .supplements-collections {
-      padding: 80px 86px;
-    }
-  }
-  @media screen and (max-width: 991px) {
-    .supplements-collections {
-      padding: 36px 0;
-    }
-  }
-
   .supplements-collections {
     background: #000;
     color: #fff;
@@ -30,10 +19,6 @@
     }
   }
 
-  .supplements-collections-header h2 {
-    color: #fff;
-  }
-
   .supplements-collections-link {
     color: #fff;
     font-family: "SaaSeriesEDOT";
@@ -42,11 +27,10 @@
     text-align: center;
     text-decoration: underline;
     transition: all .5s;
-    display: none;
   }
 
   @media screen and (min-width: 992px) {
-    .supplements-collections-link.destop {
+    .supplements-collections-link.desktop {
       display: block;
     }
     .supplements-collections-link.mobile {
@@ -55,18 +39,12 @@
   }
 
   .supplements-collections-link.mobile {
-      display: block;
-      font-size: 16px;
-    }
+    display: block;
+    font-size: 16px;
+  }
 
   .supplements-collections-link:hover {
     color: #e86452;
-  }
-
-  .supplements-collections-grid {
-    display: grid;
-    grid-template-columns: repeat({{ section.settings.product_column }}, 1fr);
-    gap: 24px;
   }
 
   .supplements-collection-card {
@@ -81,6 +59,7 @@
     display: inline-block;
     margin-bottom: 0.5rem;
   }
+
   .supplements-collection-image img {
     width: 100%;
     height: 100%;
@@ -103,37 +82,72 @@
     </a>
   </div>
 
-  <div class="supplements-collections-grid">
-    {% for block in section.blocks %}
-      {% assign collection = collections[block.settings.collection] %}
-      {% if collection %}
-        <a href="{{ collection.url }}" class="supplements-collection-card">
-          <div class="supplements-collection-image">
-            {% if block.settings.collection_img %}
-              <img
-                src="{{ block.settings.collection_img | img_url: 'master' }}"
-                alt="{{ collection.title | escape }}"
-                loading="lazy"
-              >
-            {% elsif collection.image %}
-              <img
-                src="{{ collection.image | img_url: 'master' }}"
-                alt="{{ collection.title | escape }}"
-                loading="lazy"
-              >
-            {% else %}
-              {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
-            {% endif %}
+  <!-- Swiper Slider -->
+  <div class="swiper supplements-collections-slider">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% assign collection = collections[block.settings.collection] %}
+        {% if collection %}
+          <div class="swiper-slide">
+            <a href="{{ collection.url }}" class="supplements-collection-card">
+              <div class="supplements-collection-image">
+                {% if block.settings.collection_img %}
+                  <img
+                    src="{{ block.settings.collection_img | img_url: 'master' }}"
+                    alt="{{ collection.title | escape }}"
+                    loading="lazy"
+                  >
+                {% elsif collection.image %}
+                  <img
+                    src="{{ collection.image | img_url: 'master' }}"
+                    alt="{{ collection.title | escape }}"
+                    loading="lazy"
+                  >
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'supplements-collection-placeholder' }}
+                {% endif %}
+              </div>
+              <h3 style="color: {{ block.settings.title_color }}">{{ collection.title }}</h3>
+            </a>
           </div>
-          <h3 style="color: {{ block.settings.title_color }}">{{ collection.title }}</h3>
-        </a>
-      {% endif %}
-    {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
+
   <a href="{{ section.settings.shop_all_link }}" class="supplements-collections-link mobile">
     {{- section.settings.all_product_btn -}}
   </a>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".supplements-collections-slider", {
+      slidesPerView: {{ section.settings.product_column }},
+      spaceBetween: 24,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        320: { slidesPerView: 1.2, spaceBetween: 16 },
+        576: { slidesPerView: 2, spaceBetween: 16 },
+        768: { slidesPerView: 3, spaceBetween: 20 },
+        992: { slidesPerView: {{ section.settings.product_column }}, spaceBetween: 24 },
+      },
+    });
+  });
+</script>
 
 {% schema %}
 {
@@ -151,7 +165,7 @@
       "min": 1,
       "max": 6,
       "step": 1,
-      "label": "Columns",
+      "label": "Columns / Slides Per View",
       "default": 4
     },
     {
