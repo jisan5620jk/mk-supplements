@@ -245,7 +245,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
       const swiper = new Swiper('.product-slider-{{ section_id }}', {
-          slidesPerView: {{ section.settings.slides_desktop_large | default: 4 }},
+          slidesPerView: {{ section.settings.slides_desktop | default: 4 }},
           spaceBetween: {{ section.settings.space_between | default: 24 }},
           loop: {{ section.settings.loop | json }},
           speed: {{ section.settings.speed | default: 600 }},
@@ -262,8 +262,9 @@
           } : false,
           breakpoints: {
           0:   { slidesPerView: {{ section.settings.slides_mobile | default: 1 }}, spaceBetween: {{ section.settings.space_between_mobile | default: section.settings.space_between }} },
-          750: { slidesPerView: {{ section.settings.slides_tablet | default: 2 }}, spaceBetween: {{ section.settings.space_between_tablet | default: section.settings.space_between }} },
-          990: { slidesPerView: {{ section.settings.slides_desktop | default: 4 }}, spaceBetween: {{ section.settings.space_between | default: 24 }} }
+          767: { slidesPerView: {{ section.settings.slides_tablet | default: 2 }}, spaceBetween: {{ section.settings.space_between_tablet | default: section.settings.space_between }} },
+          1023: { slidesPerView: {{ section.settings.slides_desktop | default: 3 }}, spaceBetween: {{ section.settings.space_between | default: 24 }} },
+          1199: { slidesPerView: {{ section.settings.slides_desktop_large | default: 4 }}, spaceBetween: {{ section.settings.space_between | default: 24 }} }
           }
       });
   });
