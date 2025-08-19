@@ -186,6 +186,18 @@
           </div>
         </div>
       {% endfor %}
+      {% for block in section.blocks %}
+        <div class="unique-supplements-feature-card">
+          <div class="unique-supplements-feature-card-icon">
+            {% if block.settings.icon %}
+              <img src="{{ block.settings.icon | img_url: 'master' }}" alt="{{ block.settings.label }}">
+            {% endif %}
+          </div>
+          <div class="unique-supplements-feature-card-content">
+            <h4>{{ block.settings.label }}</h4>
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
   <div class="unique-feature-desktop">
