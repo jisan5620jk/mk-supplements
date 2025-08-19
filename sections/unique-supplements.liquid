@@ -116,9 +116,15 @@
     {% endif %}
 
     {% if section.settings.video_file != blank %}
-      <video id="video-{{ section.id }}" controls playsinline autoplay muted preload="auto">
+      <video
+        id="video-{{ section.id }}"
+        class="w-full h-auto"
+        controls
+        playsinline
+        preload="auto"
+      >
         {% for source in section.settings.video_file.sources %}
-          <source src="{{ source.url | asset_url }}" type="{{ source.mime_type }}">
+          <source src="{{ source.url | prepend: 'https:' }}" type="{{ source.mime_type }}">
         {% endfor %}
         Your browser does not support the video tag.
       </video>
