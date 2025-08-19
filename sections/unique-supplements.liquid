@@ -161,11 +161,6 @@
       <div class="unique-supplements-feature" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
         {% for block in section.blocks %}
           <span class="unique-supplements-feature-card">
-            <span class="unique-supplements-feature-card-icon">
-              {% if block.settings.icon %}
-                <img src="{{ block.settings.icon | img_url: 'master' }}" alt="{{ block.settings.label }}">
-              {% endif %}
-            </span>
             <span class="unique-supplements-feature-card-content">
               <h4>{{ block.settings.label }}</h4>
             </span>
