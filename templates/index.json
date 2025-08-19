@@ -162,6 +162,42 @@
     },
     "supplements_collections_PhUTcY": {
       "type": "supplements-collections",
+      "blocks": {
+        "collection_block_y6wGLk": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "best-selling",
+            "collection_img": "shopify://shop_images/Group_12716.png"
+          }
+        },
+        "collection_block_iU6AwM": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "frontpage",
+            "collection_img": "shopify://shop_images/Group_12716_1.png"
+          }
+        },
+        "collection_block_4rK8GK": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "new-products",
+            "collection_img": "shopify://shop_images/Group_12716_3.png"
+          }
+        },
+        "collection_block_9wrkTt": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "frontpage",
+            "collection_img": "shopify://shop_images/Group_12716_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_y6wGLk",
+        "collection_block_iU6AwM",
+        "collection_block_4rK8GK",
+        "collection_block_9wrkTt"
+      ],
       "name": "Supplements Collections",
       "settings": {
         "enable_boxed_section": true,
@@ -169,7 +205,6 @@
         "section_title": "Shop by Health Goals",
         "shop_all_link": "shopify://collections",
         "all_product_btn": "SHOP ALL HEALTH GOALS",
-        "title_color": "#ffffff",
         "image_ratio": "4 / 5"
       }
     },
