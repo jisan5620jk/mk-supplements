@@ -177,6 +177,7 @@
       if (poster) poster.style.display = 'none';
       if (video) {
         video.style.display = 'block';
+        video.load(); // ⬅️ ensure source reloads
         video.play();
       }
     }
