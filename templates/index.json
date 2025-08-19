@@ -167,28 +167,32 @@
           "type": "collection_block",
           "settings": {
             "collection": "best-selling",
-            "collection_img": "shopify://shop_images/Group_12716.png"
+            "collection_img": "shopify://shop_images/Group_12716.png",
+            "title_color": "#3384ff"
           }
         },
         "collection_block_iU6AwM": {
           "type": "collection_block",
           "settings": {
             "collection": "frontpage",
-            "collection_img": "shopify://shop_images/Group_12716_1.png"
+            "collection_img": "shopify://shop_images/Group_12716_1.png",
+            "title_color": "#efb605"
           }
         },
         "collection_block_4rK8GK": {
           "type": "collection_block",
           "settings": {
             "collection": "new-products",
-            "collection_img": "shopify://shop_images/Group_12716_3.png"
+            "collection_img": "shopify://shop_images/Group_12716_3.png",
+            "title_color": "#eb7618"
           }
         },
         "collection_block_9wrkTt": {
           "type": "collection_block",
           "settings": {
             "collection": "frontpage",
-            "collection_img": "shopify://shop_images/Group_12716_2.png"
+            "collection_img": "shopify://shop_images/Group_12716_2.png",
+            "title_color": "#f53891"
           }
         }
       },
