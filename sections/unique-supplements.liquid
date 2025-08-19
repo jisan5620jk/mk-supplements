@@ -125,7 +125,7 @@
         poster="{{ section.settings.poster_image | image_url: width: 1600 }}"
       >
         {% for source in section.settings.video_file.sources %}
-          <source src="{{ source.url | prepend: 'https:' | asset_url }}" type="{{ source.mime_type }}">
+          <source src="{{ source.url | prepend: 'https:' }}" type="{{ source.mime_type }}">
         {% endfor %}
         Your browser does not support the video tag.
       </video>
@@ -139,7 +139,7 @@
         preload="auto"
         poster="{{ section.settings.poster_image | image_url: width: 1600 }}"
       >
-        <source src="{{ section.settings.video_url | asset_url }}" type="video/mp4">
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     {% endif %}
