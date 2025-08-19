@@ -116,7 +116,7 @@
     {% endif %}
 
     {% if section.settings.video_file != blank %}
-      <video id="video-{{ section.id }}" controls playsinline>
+      <video id="video-{{ section.id }}" controls playsinline preload="auto">
         {% for source in section.settings.video_file.sources %}
           <source src="{{ source.url | asset_url }}" type="{{ source.mime_type }}">
         {% endfor %}
