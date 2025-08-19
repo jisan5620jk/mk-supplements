@@ -54,7 +54,7 @@
   }
 
   .unique-supplements-feature {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     width: 100%;
   }
@@ -72,6 +72,11 @@
     .unique-supplements-feature {
       display: inline-flex;
       animation: marquee var(--marquee-speed, 40s) linear infinite;
+      white-space: nowrap;
+      gap: 20px;
+    }
+    .unique-supplements-feature {
+      gap: 20px;
       white-space: nowrap;
     }
     .unique-supplements-feature-card-content h4 {
