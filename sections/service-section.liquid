@@ -128,24 +128,6 @@
   #{{ section_id }} .services__btn--prev { left: -14px; }
   #{{ section_id }} .services__btn--next { right: -14px; }
 
-  /* Dots */
-  #{{ section_id }} .swiper-pagination-bullets {
-    position: static;
-    margin-top: 18px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-  }
-  #{{ section_id }} .swiper-pagination-bullet {
-    width: 8px; height: 8px;
-    background: #fff;
-    opacity: .4;
-    transition: opacity .2s ease, transform .2s ease;
-  }
-  #{{ section_id }} .swiper-pagination-bullet-active {
-    opacity: 1; transform: scale(1.1);
-  }
-
   /* Responsive tweaks */
   @media (max-width: 989px) {
     #{{ section_id }} .services__btn--prev { left: 4px; }
@@ -212,10 +194,6 @@
             </div>
           {%- endfor -%}
         </div>
-
-        {% if section.settings.show_dots %}
-          <div class="swiper-pagination"></div>
-        {% endif %}
       </div>
 
       {% if section.settings.show_arrows %}
