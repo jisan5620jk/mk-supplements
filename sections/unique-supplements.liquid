@@ -122,22 +122,29 @@
         controls
         playsinline
         preload="auto"
+        poster="{{ section.settings.poster_image | image_url: width: 1600 }}"
       >
         {% for source in section.settings.video_file.sources %}
-          <source src="{{ source.url | prepend: 'https:' }}" type="{{ source.mime_type }}">
+          <source src="{{ source.url | prepend: 'https:' | asset_url }}" type="{{ source.mime_type }}">
         {% endfor %}
         Your browser does not support the video tag.
       </video>
 
     {% elsif section.settings.video_url != blank %}
-      <video id="video-{{ section.id }}" controls>
-        <source src="{{ section.settings.video_url | asset_url}}" type="video/mp4">
+      <video
+        id="video-{{ section.id }}"
+        class="w-full h-auto"
+        controls
+        playsinline
+        preload="auto"
+        poster="{{ section.settings.poster_image | image_url: width: 1600 }}"
+      >
+        <source src="{{ section.settings.video_url | asset_url }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     {% endif %}
   </div>
 
-  <pre>{{ section.settings.video_file | json }}</pre>
   <div class="unique-feature-mobile">
     {% for row in (1..3) %}
       <div class="unique-supplements-feature" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
