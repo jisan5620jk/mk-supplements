@@ -57,15 +57,20 @@
     width: 100%;
     margin: 34px auto -10px;
   }
+  @media screen and (min-width: 1024px) {
+    .best-sellers__image.mobile {
+      display: none;
+    }
+  }
   @media screen and (max-width: 1023px) {
     .best-sellers__image.desktop {
       display: none;
     }
-    .best-sellers__image.mobile {
+  }
+  .best-sellers__image.mobile {
       width: 100%;
       margin: 34px auto 20px;
     }
-  }
 </style>
 
 <div class="best-sellers__wrapper {% if section.settings.enable_boxed_section %}boxed-section{% endif %}">
