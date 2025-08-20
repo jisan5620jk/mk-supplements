@@ -166,7 +166,11 @@
               <article class="service-card">
                 <div class="service-card__media">
                   {% if img != blank %}
-                    {{ img | image_url | image_tag: alt: block.settings.title, loading: 'lazy' }}
+                    <img
+                      src="{{ img | image_url }}"
+                      alt="{{ block.settings.title | escape }}"
+                      loading="lazy"
+                    >
                   {% else %}
                     {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                   {% endif %}
