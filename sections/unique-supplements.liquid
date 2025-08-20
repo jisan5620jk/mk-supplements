@@ -134,7 +134,7 @@
   <div class="video-wrapper">
     {% if section.settings.poster_image %}
       <img
-        src="{{ section.settings.poster_image | image_url: width: 1600 }}"
+        src="{{ section.settings.poster_image | img_url: 'master' }}"
         alt="Video Poster"
         class="video-poster"
         id="videoPoster-{{ section.id }}"
@@ -148,7 +148,7 @@
         controls
         playsinline
         preload="auto"
-        poster="{{ section.settings.poster_image | image_url: width: 1600 }}"
+        poster="{{ section.settings.poster_image | img_url: 'master' }}"
       >
         {% for source in section.settings.video_file.sources %}
           <source src="{{ source.url | prepend: 'https:' }}" type="{{ source.mime_type }}">
@@ -163,7 +163,7 @@
         controls
         playsinline
         preload="auto"
-        poster="{{ section.settings.poster_image | image_url: width: 1600 }}"
+        poster="{{ section.settings.poster_image | img_url: 'master' }}"
       >
         <source src="{{ section.settings.video_url }}" type="video/mp4">
         Your browser does not support the video tag.
@@ -217,7 +217,7 @@
       if (poster) poster.style.display = 'none';
       if (video) {
         video.style.display = 'block';
-        video.load(); // ⬅️ ensure source reloads
+        video.load();
         video.play();
       }
     }
