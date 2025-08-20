@@ -13,8 +13,6 @@
           src="{{ the_product.featured_image | img_url: 'master' }}"
           alt="{{ the_product.featured_image.alt | escape }}"
           loading="lazy"
-          width="{{ the_product.featured_image.width }}"
-          height="{{ the_product.featured_image.height }}"
         >
 
       {%- else -%}
