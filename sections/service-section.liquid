@@ -166,7 +166,7 @@
               <article class="service-card">
                 <div class="service-card__media">
                   {% if img != blank %}
-                    {{ img | image_url: 'master' | image_tag: alt: block.settings.title }}
+                    {{ img | image_url | image_tag: alt: block.settings.title, loading: 'lazy' }}
                   {% else %}
                     {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                   {% endif %}
