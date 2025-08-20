@@ -6,6 +6,12 @@
     position: relative;
   }
 
+  @media screen and (max-width: 1023px) {
+    .best-sellers__wrapper {
+      padding: 62px 0 48px;
+    }
+  }
+
   .best-sellers__wrapper:before {
     position: absolute;
     content: '';
@@ -31,6 +37,7 @@
     text-align: center;
     color: #ffffff;
     max-width: 756px;
+    padding: 0 2rem;
     margin: 16px auto 24px;
   }
 
@@ -68,9 +75,9 @@
     }
   }
   .best-sellers__image.mobile {
-      width: 100%;
-      margin: 34px auto 20px;
-    }
+    width: 100%;
+    margin: 45px auto 0;
+  }
 </style>
 
 <div class="best-sellers__wrapper {% if section.settings.enable_boxed_section %}boxed-section{% endif %}">
