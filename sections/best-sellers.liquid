@@ -3,6 +3,17 @@
     padding: 82px 2rem 0;
     background: #000000;
     text-align: center;
+    position: relative;
+  }
+
+  .best-sellers__wrapper:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    width: 100%;
+    height: 143px;
   }
 
   .best-sellers__text h2 {
@@ -31,7 +42,7 @@
   .best-sellers__image {
     max-width: 1078px;
     width: 100%;
-    margin: 0 auto;
+    margin: 34px auto -10px;
   }
 </style>
 
