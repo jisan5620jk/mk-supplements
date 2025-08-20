@@ -91,51 +91,51 @@
           "type": "product",
           "settings": {
             "product": "long-dress-1",
-            "rating_text": "Rating 381"
+            "rating_text": "Review 381"
           }
         },
         "product_FxNmWU": {
           "type": "product",
           "settings": {
             "product": "long-dress-caro-line-4",
-            "rating_text": "Rating 381"
-          }
-        },
-        "product_ixBGQi": {
-          "type": "product",
-          "settings": {
-            "product": "leather-small-backpack",
-            "rating_text": "Rating 381"
-          }
-        },
-        "product_aCFqGJ": {
-          "type": "product",
-          "settings": {
-            "product": "green-flower-shirt",
-            "rating_text": "Rating 381"
+            "rating_text": "Review 381"
           }
         },
         "product_9DKtdQ": {
           "type": "product",
           "settings": {
             "product": "black-shorts-with-belt",
-            "rating_text": "Rating 381"
+            "rating_text": "Review 381"
+          }
+        },
+        "product_aCFqGJ": {
+          "type": "product",
+          "settings": {
+            "product": "green-flower-shirt",
+            "rating_text": "Review 381"
+          }
+        },
+        "product_ixBGQi": {
+          "type": "product",
+          "settings": {
+            "product": "leather-small-backpack",
+            "rating_text": "Review 381"
           }
         },
         "product_yHRLNJ": {
           "type": "product",
           "settings": {
             "product": "slogan-hat",
-            "rating_text": "Rating 381"
+            "rating_text": "Review 381"
           }
         }
       },
       "block_order": [
         "product_8ztT4q",
         "product_FxNmWU",
-        "product_ixBGQi",
-        "product_aCFqGJ",
         "product_9DKtdQ",
+        "product_aCFqGJ",
+        "product_ixBGQi",
         "product_yHRLNJ"
       ],
       "name": "Products Slider",
