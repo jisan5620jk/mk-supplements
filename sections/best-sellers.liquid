@@ -44,7 +44,7 @@
   <div class="best-sellers__image">
     <img
       src="{{ section.settings.best_seller_image | img_url: 'master' }}"
-      alt="{{ section.settings.best_seller_image.alt }}"
+      alt="{{ section.settings.best_seller_image.alt | escape }}"
     >
   </div>
 </div>

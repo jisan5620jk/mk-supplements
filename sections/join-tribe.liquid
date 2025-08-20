@@ -75,11 +75,11 @@
     <!-- Left Content -->
     <div class="join-tribe__content">
       {% if section.settings.heading != blank %}
-        <h2 class="section-title">{{ section.settings.heading }}</h2>
+        <h2 class="section-title">{{ section.settings.heading | escape }}</h2>
       {% endif %}
 
       {% if section.settings.subtext != blank %}
-        <p class="join-tribe__text">{{ section.settings.subtext }}</p>
+        <p class="join-tribe__text">{{ section.settings.subtext | escape }}</p>
       {% endif %}
 
       <!-- Signup Form -->
@@ -97,7 +97,7 @@
           class="join-tribe__input"
         >
         <button type="submit" class="join-tribe__button">
-          {{ section.settings.button_label }}
+          {{ section.settings.button_label | escape }}
         </button>
       </form>
     </div>
