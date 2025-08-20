@@ -366,7 +366,8 @@
         "description": "<p>Modern farming has depleted soil quality, leaving most Americans deficient in essential micronutrients. Our animal-based supplements provide highly-bioavailable vitamins, minerals, coenzymes, and peptides for optimal health and vitality.<br/><br/></p>",
         "button_link": "shopify://collections/best-selling",
         "button_label": "Shop Now",
-        "best_seller_image": "shopify://shop_images/Supplements_1.png"
+        "best_seller_image": "shopify://shop_images/Supplements_1.png",
+        "best_seller_image_mobile": "shopify://shop_images/Supplements_2.png"
       }
     },
     "join_tribe_Vwyadm": {
