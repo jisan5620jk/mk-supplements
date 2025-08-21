@@ -67,8 +67,9 @@
         {% else %}
           {% assign blocks_exist = false %}
         {% endif %}
-        {% for row in (1..3) %}
-          <div class="announcement-marquee-track" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
+
+        <div class="announcement-marquee-track" style="--marquee-speed: {{ section.settings.marquee_speed }}s;">
+          {% for row in (1..3) %}
             {% if blocks_exist %}
               {% for block in section.blocks %}
                 <span class="announcement-marquee-item">
@@ -86,8 +87,8 @@
                 <p><strong>30-day</strong> money-back guarantee</p>
               </span>
             {% endif %}
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
 
     {% when 'slider' %}
